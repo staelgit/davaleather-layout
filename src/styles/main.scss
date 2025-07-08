@@ -1,3 +1,7 @@
+@use '../components/header/_header.scss';
+@use '../components/footer/_footer.scss';
+@use '../pages/about/_about.scss';
+
 // Переменные
 $font-stack: 'Inter', Arial, sans-serif;
 $primary-color: #222;
