@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
+  root: 'src',
   base: './',
   css: {
     preprocessorOptions: {
@@ -20,10 +21,12 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: '../dist',
+    emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        about: resolve(__dirname, 'src/pages/about/about.html'),
+        main: resolve(__dirname, 'src/index.html'),
+        about: resolve(__dirname, 'src/pages/about.html'),
       },
     },
   },

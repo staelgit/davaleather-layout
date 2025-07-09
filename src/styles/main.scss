@@ -1,6 +1,4 @@
-@use '../components/header/_header.scss';
-@use '../components/footer/_footer.scss';
-@use '../pages/about/_about.scss';
+@use '/styles/pages/about.scss';
 
 // Переменные
 $font-stack: 'Inter', Arial, sans-serif;
@@ -37,3 +35,13 @@ body {
     padding: 0 32px;
   }
 } 
+
+    .block{
+      background-color: lightcoral;
+        &__element {
+          width: 500px;
+
+                margin: 0 auto;
+          background-color: blueviolet;
+      }
+    }
