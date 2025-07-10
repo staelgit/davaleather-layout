@@ -1,0 +1,19 @@
+// _mixins.scss
+@use 'vars' as *;
+
+// Миксины для переиспользуемых стилей 
+@mixin center-content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ // Миксины для медиа-запросов, Mobile First (min-width) 
+@mixin sm-up { @media (min-width: $mobile-sm) { @content; } } // 360px+
+@mixin md-up { @media (min-width: $mobile) { @content; } }    // 480px+
+@mixin lg-up { @media (min-width: $tablet) { @content; } }    // 768px+
+@mixin xl-up { @media (min-width: $tablet-lg) { @content; } } // 1024px+
+@mixin xxl-up { @media (min-width: $desktop) { @content; } }  // 1280px+
+
+// Дополнительно: максимумы (редко, но полезно)
+@mixin sm-only { @media (max-width: #{$mobile - 1px}) { @content; } } // До 479px

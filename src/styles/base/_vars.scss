@@ -1,0 +1,18 @@
+// _vars.scss
+// CSS-переменные для глобальных стилей 
+$font-stack: 'Inter', Arial, sans-serif;
+$primary-color: #222;
+$secondary-color: #d4d2d2; 
+
+// --- Адаптив ---
+// Минимальные отступы безопасности (safe area) для современных устройств
+$safe-area-mobile: env(safe-area-inset-left, 16px); // Для iPhone X+ 
+
+// Брейкпоинты (адаптация под 95% устройств)
+$mobile-sm: 360px;  // Маленькие телефоны (Galaxy Fold, iPhone SE)
+$mobile: 480px;     // Стандартные мобильные (большинство смартфонов)
+$tablet: 768px;     // Планшеты (вертикально)
+$tablet-lg: 1024px; // Планшеты (горизонтально) / маленькие ноутбуки
+$desktop: 1280px;   // Стандартные ноутбуки
+$desktop-lg: 1440px; // Большие мониторы
+$desktop-xl: 1920px; // 4K и широкоформатные
