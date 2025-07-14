@@ -8,16 +8,18 @@
   </head>
   <body>
     <div class="container">
+      {{>header}}
       <h1>Главная страница</h1>
       <p>текст главной страницы</p>
       <p>из index.html</p>
-      <a href="/pages/about.html">О компании</a>
+      <a href="/pages/about/index.html">О компании</a>
       <img src="/assets/icons/icon.svg" alt="icon" />
       <img src="/assets/images/index/main.jpg" style="width: 800px" alt="main" />
       <div class="block">
         block
         <div class="block__element">element</div>
       </div>
+      {{>footer}}
     </div>
 
     <script type="module" src="/js/main.js"></script>

@@ -19,6 +19,7 @@
     "stylelint": "^16.21.1",
     "stylelint-scss": "^6.12.1",
     "vite": "^7.0.3",
+    "vite-plugin-handlebars": "^2.0.0",
     "vite-plugin-html-config": "^2.0.2",
     "vite-plugin-html-template": "^1.2.2",
     "vite-plugin-include-html": "^1.0.0"
