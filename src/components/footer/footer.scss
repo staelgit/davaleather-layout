@@ -1,60 +1,120 @@
-.footer {
-  background: #222;
-  color: #fff;
-  padding: 2rem 1rem 1rem 1rem;
-  font-size: 1rem;
+@use '../../styles/base/vars' as *;
+@use '../../styles/base/mixins' as *;
 
-  &__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+.footer {
+
+  .container {
+    background: var(--color-primary-background2);
+    padding-top: 6.25rem;
+    padding-bottom: 3.125rem;
+
+    @include lg-up {
+      padding-top: 5.625rem;
+      padding-bottom: 3.125rem;
+    }
   }
 
-  &__logo {
-    font-weight: bold;
-    font-size: 1.1rem;
+  &__main-section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include lg-up {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__nav {
-    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include lg-up {
+      flex-basis: 58%;
+    }
   }
 
-  &__menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  &__nav-title {
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__nav-main {
+    flex-basis: 33%;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-  }
 
-  &__menu-item a {
-    color: #fff;
-    text-decoration: none;
-    opacity: 0.8;
-    transition: opacity 0.2s;
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  &__copyright {
-    font-size: 0.9rem;
-    opacity: 0.7;
-  }
-
-  @media (min-width: 768px) {
-    &__container {
+    @include lg-up {
+      flex-basis: 59%;
       flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-    &__menu {
-      flex-direction: row;
-      gap: 1.5rem;
     }
   }
-} 
+
+  &__main-menu-group {
+    @include lg-up {
+      flex-basis: 50%;
+    }
+  }
+
+  &__main-menu-item {
+    margin-bottom: 2px;
+  }
+
+  &__nav-services {
+
+    @include lg-up {
+      flex-basis: 41%;
+    }
+  }
+
+  &__services-menu-item {
+    margin-bottom: 2px;
+  }
+
+  &__legal-section {
+
+    @include mobile-body-4;
+    color: var(--color-text-black);
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--color-text-black);
+    padding: 0 10px;
+    margin-top: 50px;
+
+    @include lg-up {
+      height: 60px;
+      padding: 0 20px;
+      margin-top: 70px;
+      @include desktop-body-3;
+    }
+
+  }
+
+  &__legal-menu {
+    display: flex;
+    gap: 10px;
+
+    @include lg-up {
+      gap: 70px;
+    }
+
+  }
+
+  &__main-menu-item,
+  &__services-menu-item,
+  &__legal-menu-item {
+    a {
+
+      &:hover,
+      &:focus {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+}

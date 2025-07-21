@@ -12,37 +12,30 @@
 @use '../components/footer/footer';
 
 // Основные стили
-body {
-  font-family: var(--font-stack);
-  background: var(--secondary-color);
-  color: var(--primary-color);
+html {
   font-size: 16px;
+}
+
+body {
+  font-family: var(--font-base);
+  font-weight: 400;
+  line-height: 1.2;
+  background-color: var(--color-background-body);
 }
 
 // Mobile-first стили
 .container {
   // Mobile Default (100% ширины + безопасные отступы)
+  background-color: var(--color-primary-background1);
   width: 100%;
   max-width: 100%;
-  padding: 0 max(16px, $safe-area-mobile); // Защита от "ушей" iPhone
+  padding: 0 max(1rem, $safe-area-mobile); // Защита от "ушей" iPhone
   margin: 0 auto;
 
-  // Адаптация:
-  @include md-up { padding: 0 24px; } // 480px+
-  @include lg-up { padding: 0 32px; } // 768px+
-  @include xl-up { 
-    max-width: 1200px; // Фиксация ширины для планшетов/ноутбуков
-  }
-  @include xxl-up {
-    max-width: 1400px; // Десктоп
-  }
-}
-
-.block{
-  background-color: lightcoral;
-  height: 200px;
-    &__element {
-      width: 500px;
-      background-color: blueviolet;
+  // Desktop
+  // 768px+
+  @include lg-up {
+    max-width: 1440px;
+    padding: 0 4.375rem;
   }
 }

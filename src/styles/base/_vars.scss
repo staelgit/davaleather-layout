@@ -1,22 +1,29 @@
 // _vars.scss
 // CSS-переменные для глобальных стилей 
 :root {
-   --primary-color: #222;
-   --secondary-color: #dab1b1;
-   --font-stack: 'Inter', Arial, sans-serif;
- }
+  --color-background-body: #282B2D;
+  --color-accent: #C75528;
+  --color-primary-background1: #323232;
+  --color-primary-background2: #F0F0F0;
+  --color-secondary-error: #E8D1C8;
+  --color-secondary-disabled: #B0B0B0;
+  --color-secondary-gray: #949494;
+  --color-text-white: #FFFFFF;
+  --color-text-black: #222222;
+  --font-accent: 'Random Grotesque Std', Arial, sans-serif;
+  --font-base: 'Roboto', Arial, sans-serif;
+
+}
 
 // --- Адаптив ---
 // Минимальные отступы безопасности (safe area) для современных устройств
 $safe-area-mobile: env(safe-area-inset-left, 16px); // Для iPhone X+ 
 
 // Брейкпоинты (адаптация под 95% устройств)
-$mobile-sm: 360px;  // Маленькие телефоны (Galaxy Fold, iPhone SE)
-$mobile: 480px;     // Стандартные мобильные (большинство смартфонов)
-$tablet: 768px;     // Планшеты (вертикально)
+$mobile-sm: 360px; // Маленькие телефоны (Galaxy Fold, iPhone SE)
+$mobile: 480px; // Стандартные мобильные (большинство смартфонов)
+$tablet: 768px; // Планшеты (вертикально)
 $tablet-lg: 1024px; // Планшеты (горизонтально) / маленькие ноутбуки
-$desktop: 1280px;   // Стандартные ноутбуки
+$desktop: 1280px; // Стандартные ноутбуки
 $desktop-lg: 1440px; // Большие мониторы
 $desktop-xl: 1920px; // 4K и широкоформатные
-
-

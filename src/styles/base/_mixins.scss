@@ -3,17 +3,241 @@
 
 // Миксины для переиспользуемых стилей 
 @mixin center-content {
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- // Миксины для медиа-запросов, Mobile First (min-width) 
-@mixin sm-up { @media (min-width: $mobile-sm) { @content; } } // 360px+
-@mixin md-up { @media (min-width: $mobile) { @content; } }    // 480px+
-@mixin lg-up { @media (min-width: $tablet) { @content; } }    // 768px+
-@mixin xl-up { @media (min-width: $tablet-lg) { @content; } } // 1024px+
-@mixin xxl-up { @media (min-width: $desktop) { @content; } }  // 1280px+
+// Типографика
+
+// desktop
+@mixin desktop-H1 {
+  font-family: var(--font-accent);
+  font-size: 74px;
+  line-height: 1;
+}
+
+@mixin desktop-H2 {
+  font-family: var(--font-accent);
+  font-size: 70px;
+  line-height: 1;
+}
+
+@mixin desktop-H3 {
+  font-family: var(--font-accent);
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+@mixin desktop-H4 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+@mixin desktop-H5 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+@mixin desktop-H6 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+@mixin desktop-body-1 {
+  font-family: var(--font-accent);
+  font-size: 44px;
+  line-height: 1.1;
+}
+
+@mixin desktop-body-2 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+@mixin desktop-body-3 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+@mixin desktop-body-4 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+@mixin desktop-body-4-medium {
+  font-family: var(--font-base);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+@mixin desktop-body-5 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+// mobile
+@mixin mobile-H1 {
+  font-family: var(--font-accent);
+  font-size: 50px;
+  line-height: 0.9;
+}
+
+@mixin mobile-H2 {
+  font-family: var(--font-accent);
+  font-size: 30px;
+  line-height: 1;
+}
+
+@mixin mobile-H3 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+@mixin mobile-H4 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+@mixin mobile-H5 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+@mixin mobile-H5-uppercase {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+@mixin mobile-body-1 {
+  font-family: var(--font-accent);
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+@mixin mobile-body-2 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+@mixin mobile-body-2-uppercase {
+  font-family: var(--font-base);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+@mixin mobile-body-2-uppercase-medium {
+  font-family: var(--font-base);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+@mixin mobile-body-3 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+@mixin mobile-body-3-medium {
+  font-family: var(--font-base);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+@mixin mobile-body-4 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+@mixin mobile-body-4-medium {
+  font-family: var(--font-base);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+@mixin mobile-body-5 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+
+
+// Миксины для медиа-запросов, Mobile First (min-width) 
+@mixin sm-up {
+  @media (min-width: $mobile-sm) {
+    @content;
+  }
+}
+
+// 360px+
+@mixin md-up {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+
+// 480px+
+@mixin lg-up {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+// 768px+
+@mixin xl-up {
+  @media (min-width: $tablet-lg) {
+    @content;
+  }
+}
+
+// 1024px+
+@mixin xxl-up {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+// 1280px+
 
 // Дополнительно: максимумы (редко, но полезно)
-@mixin sm-only { @media (max-width: #{$mobile - 1px}) { @content; } } // До 479px
+@mixin sm-only {
+  @media (max-width: #{$mobile - 1px}) {
+    @content;
+  }
+}
+
+// До 479px
