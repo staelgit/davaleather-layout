@@ -9,18 +9,24 @@
 
 // === Стили компонентов ===
 @use '../components/header/header';
+@use '../components/contacts/contacts';
 @use '../components/footer/footer';
 
 // Основные стили
 html {
   font-size: 16px;
+
+  // @include lg-up {
+  //   font-size: 12px;
+  // }
 }
 
 body {
+  background-color: var(--color-background-body);
+  color: var(--color-text-black);
   font-family: var(--font-base);
   font-weight: 400;
   line-height: 1.2;
-  background-color: var(--color-background-body);
 }
 
 // Mobile-first стили
