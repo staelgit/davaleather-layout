@@ -3,7 +3,7 @@
 
 .footer {
 
-  .container {
+  .footer__container {
     background: var(--color-primary-background2);
     padding-top: 6.25rem;
     padding-bottom: 3.125rem;
@@ -13,6 +13,7 @@
       padding-bottom: 3.125rem;
     }
   }
+
 
   &__main-section {
     display: flex;

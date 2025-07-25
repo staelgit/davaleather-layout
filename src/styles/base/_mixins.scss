@@ -8,6 +8,14 @@
   align-items: center;
 }
 
+@mixin container-padding {
+  padding: 0 var(--container-padding);
+}
+
+@mixin container-padding-left {
+  padding-left: var(--container-padding);
+}
+
 // Типографика
 
 // desktop
@@ -157,6 +165,7 @@
   font-weight: 500;
   font-size: 1.25rem; // 20px
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 @mixin mobile-body-3 {

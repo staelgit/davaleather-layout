@@ -3,45 +3,13 @@
 @use 'base/fonts';
 @use 'base/reset';
 @use 'base/mixins' as *;
+@use 'base/base-styles';
 
 // === Стили страниц ===
-@use '../pages/about/about.scss';
+@use '../pages/about/about';
 
 // === Стили компонентов ===
 @use '../components/header/header';
+@use '../components/about-hero/about-hero';
 @use '../components/contacts/contacts';
 @use '../components/footer/footer';
-
-// Основные стили
-html {
-  font-size: 16px;
-
-  // @include lg-up {
-  //   font-size: 12px;
-  // }
-}
-
-body {
-  background-color: var(--color-background-body);
-  color: var(--color-text-black);
-  font-family: var(--font-base);
-  font-weight: 400;
-  line-height: 1.2;
-}
-
-// Mobile-first стили
-.container {
-  // Mobile Default (100% ширины + безопасные отступы)
-  background-color: var(--color-primary-background1);
-  width: 100%;
-  max-width: 100%;
-  padding: 0 max(1rem, $safe-area-mobile); // Защита от "ушей" iPhone
-  margin: 0 auto;
-
-  // Desktop
-  // 768px+
-  @include lg-up {
-    max-width: 1440px;
-    padding: 0 4.375rem;
-  }
-}

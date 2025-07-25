@@ -4,7 +4,12 @@ import { fileURLToPath } from 'url';
 import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
 
-const partDirs = ['src/components/header', 'src/components/footer', 'src/components/contacts'];
+const partDirs = [
+  'src/components/header',
+  'src/components/footer',
+  'src/components/contacts',
+  'src/components/about-hero',
+];
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

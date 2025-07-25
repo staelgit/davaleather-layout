@@ -3,7 +3,7 @@
 
 .contacts {
 
-   .container {
+   .contacts__container {
       @include mobile-body-3;
       background: var(--color-accent);
       display: flex;
@@ -15,7 +15,7 @@
          flex-direction: row;
          justify-content: space-between;
          align-items: center;
-         padding-left: 70px;
+         @include container-padding-left;
       }
    }
 
@@ -85,7 +85,8 @@
 
 
    &__image {
-      // flex: 1;
+      flex: 0 1 67.9%;
+      max-width: 930px;
 
       img {
          width: 100%;

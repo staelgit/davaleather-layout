@@ -1,0 +1,35 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+
+// Основные стили
+html {
+   font-size: 16px;
+
+   // @include lg-up {
+   //   font-size: 12px;
+   // }
+}
+
+body {
+   background-color: var(--color-background-body);
+   color: var(--color-text-black);
+   font-family: var(--font-base);
+   font-weight: 400;
+   line-height: 1.2;
+}
+
+.container {
+   background-color: var(--color-primary-background1);
+   width: 100%;
+   max-width: 100%;
+   padding: 0 15px;
+
+   // Desktop
+   // 768px+
+   @include lg-up {
+      @include container-padding;
+      margin: 0 auto;
+      max-width: 1440px;
+      // padding: 0 4.375rem;
+   }
+}
