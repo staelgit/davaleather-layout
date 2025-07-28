@@ -1,9 +1,13 @@
+// @use "swiper/swiper-bundle.min.css";
 // === Базовые стили ===
 @use 'base/vars' as *;
 @use 'base/fonts';
 @use 'base/reset';
 @use 'base/mixins' as *;
 @use 'base/base-styles';
+
+// === Стили внешних библиотек ===
+@use 'swiper-base-styles';
 
 // === Стили страниц ===
 @use '../pages/about/about';

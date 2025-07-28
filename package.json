@@ -34,5 +34,8 @@
     "lint:scss": "stylelint \"src/**/*.scss\"",
     "format": "prettier --write ."
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "swiper": "^11.2.10"
+  }
 }

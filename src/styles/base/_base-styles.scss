@@ -5,9 +5,17 @@
 html {
    font-size: 16px;
 
-   // @include lg-up {
-   //   font-size: 12px;
-   // }
+   @include lg-up {
+      font-size: 12px;
+   }
+
+   @include xl-up {
+      font-size: 13px;
+   }
+
+   @include xxl-up {
+      font-size: 16px;
+   }
 }
 
 body {
