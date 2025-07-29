@@ -11,31 +11,20 @@ export function initAboutHero() {
   }
 
   // Инициализация Swiper для галереи about-hero
-  const swiperMediaQuery = window.matchMedia('(max-width: 767px)');
-  let aboutHeroSwiper;
 
-  function handleSwiperChange(e) {
-    if (e.matches && !aboutHeroSwiper) {
-      aboutHeroSwiper = initSwiper('.about-hero__gallery-slider', {
-        navigation: {
-          nextEl: '.about-hero__gallery-next',
-          prevEl: '.about-hero__gallery-prev',
-        },
-        slidesPerView: 1.2,
-        spaceBetween: 25,
-        loop: true,
-      });
-    } else if (!e.matches && aboutHeroSwiper) {
-      aboutHeroSwiper.destroy(true, true);
-      aboutHeroSwiper = undefined;
-    }
+  initAboutHeroSwiper();
+
+  function initAboutHeroSwiper() {
+    console.log('initAboutHeroSwiper');
+
+    initSwiper('.about-hero__gallery', {
+      navigation: {
+        nextEl: '.about-hero__gallery-next',
+        prevEl: '.about-hero__gallery-prev',
+      },
+      slidesPerView: 1.107,
+      spaceBetween: 20,
+      loop: false,
+    });
   }
-
-  // Слушаем изменения
-  swiperMediaQuery.addEventListener('change', handleSwiperChange);
-
-  // Инициализация при загрузке
-  document.addEventListener('DOMContentLoaded', function () {
-    handleSwiperChange(swiperMediaQuery);
-  });
 }
