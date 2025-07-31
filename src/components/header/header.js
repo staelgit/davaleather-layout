@@ -1,17 +1,14 @@
 export function initHeader() {
   console.log('initHeader');
   const header = document.querySelector('.header');
-  const burgerBtn = header?.querySelector('.header__mobile-btn--burger');
-  const closeBtn = header?.querySelector('.header__mobile-menu-btn--close');
-  const mobileMenu = header?.querySelector('.header__mobile-menu');
+  const burgerBtn = header?.querySelector('.header__action-btn--burger');
   const body = document.body;
 
   // Функция открытия мобильного меню
   function openMobileMenu() {
-    if (!header || !mobileMenu) return;
+    if (!header) return;
 
     header.classList.add('header--mobile-menu-open');
-    mobileMenu.classList.add('header__mobile-menu--active');
     body.style.overflow = 'hidden';
 
     // Добавляем обработчик для закрытия по клику вне меню
@@ -21,10 +18,9 @@ export function initHeader() {
 
   // Функция закрытия мобильного меню
   function closeMobileMenu() {
-    if (!header || !mobileMenu) return;
+    if (!header) return;
 
     header.classList.remove('header--mobile-menu-open');
-    mobileMenu.classList.remove('header__mobile-menu--active');
     body.style.overflow = '';
 
     // Удаляем обработчики
@@ -34,7 +30,8 @@ export function initHeader() {
 
   // Обработчик клика вне мобильного меню
   function handleOutsideClick(event) {
-    if (!mobileMenu?.contains(event.target) && !burgerBtn?.contains(event.target)) {
+    const nav = header?.querySelector('.header__nav');
+    if (!nav?.contains(event.target) && !burgerBtn?.contains(event.target)) {
       closeMobileMenu();
     }
   }
@@ -58,38 +55,28 @@ export function initHeader() {
     }
   }
 
-  // Обработчик клика по кнопке закрытия
-  function handleCloseClick(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    closeMobileMenu();
-  }
-
-  // Обработчик клика по ссылкам в мобильном меню
-  function handleMobileLinkClick(event) {
-    const link = event.target.closest('.header__mobile-nav-link');
-    if (link && !link.classList.contains('header__mobile-nav-link--services')) {
-      closeMobileMenu();
+  // Обработчик клика по ссылкам в навигации
+  function handleNavLinkClick(event) {
+    const link = event.target.closest('.header__nav-link');
+    if (link && !link.classList.contains('header__nav-link--services')) {
+      // Закрываем мобильное меню только на мобильных устройствах
+      if (window.innerWidth < 768) {
+        closeMobileMenu();
+      }
     }
   }
 
-  // Обработчик клика по иконкам поиска и телефона
+  // Обработчик клика по иконкам действий
   function handleActionClick(event) {
-    const btn = event.target.closest('.header__action-btn, .header__mobile-btn');
+    const btn = event.target.closest('.header__action-btn');
     if (!btn) return;
 
     event.preventDefault();
 
-    if (
-      btn.classList.contains('header__action-btn--search') ||
-      btn.classList.contains('header__mobile-btn--search')
-    ) {
+    if (btn.classList.contains('header__action-btn--search')) {
       // Логика для поиска
       console.log('Search clicked');
-    } else if (
-      btn.classList.contains('header__action-btn--phone') ||
-      btn.classList.contains('header__mobile-btn--phone')
-    ) {
+    } else if (btn.classList.contains('header__action-btn--phone')) {
       // Логика для звонка
       console.log('Phone clicked');
     }
@@ -102,14 +89,10 @@ export function initHeader() {
       burgerBtn.addEventListener('click', handleBurgerClick);
     }
 
-    // Кнопка закрытия
-    if (closeBtn) {
-      closeBtn.addEventListener('click', handleCloseClick);
-    }
-
-    // Ссылки в мобильном меню
-    if (mobileMenu) {
-      mobileMenu.addEventListener('click', handleMobileLinkClick);
+    // Ссылки в навигации
+    const nav = header?.querySelector('.header__nav');
+    if (nav) {
+      nav.addEventListener('click', handleNavLinkClick);
     }
 
     // Иконки действий

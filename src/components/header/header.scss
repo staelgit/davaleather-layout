@@ -2,29 +2,29 @@
 @use '../../styles/base/mixins' as *;
 
 .header {
+   position: absolute;
+   z-index: var(--level-header);
+   width: 100%;
 
+   .header__container {
+      padding-top: 1.875rem;
+      padding-bottom: 1.875rem;
 
-   position: relative;
-   color: var(--color-text-white);
-   height: 36px;
-   z-index: 1000;
-
-   @include lg-up {
-      height: 36px;
+      @include lg-up {
+         padding-top: 1.625rem;
+         padding-bottom: 1.625rem;
+      }
    }
 
    &__content {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 100%;
 
    }
 
-   // Логотип
-   // &__logo {}
 
-   // Навигация для десктопа
+   // Навигация
    &__nav {
       display: none;
 
@@ -36,13 +36,11 @@
          display: flex;
          align-items: center;
          gap: 30px;
-         list-style: none;
-         margin: 0;
-         padding: 0;
       }
 
       &-item {
          position: relative;
+         margin-right: 1px;
 
          &--services {
             &:hover .header__dropdown {
@@ -54,13 +52,9 @@
       }
 
       &-link {
-         font-family: var(--font-base);
-         font-weight: 400;
-         font-size: 16px; // Точный размер из Figma
          color: var(--color-text-white);
-         text-decoration: none;
+         @include desktop-body-3;
          transition: color 0.3s ease;
-         line-height: 1.3;
 
          &:hover {
             color: var(--color-accent);
@@ -70,6 +64,10 @@
             display: flex;
             align-items: center;
             gap: 4px;
+         }
+
+         &--active {
+            color: var(--color-accent);
          }
       }
 
@@ -87,112 +85,52 @@
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: var(--color-background-body);
-      border: 1px solid var(--color-accent);
-      border-top: none;
       min-width: 250px;
       opacity: 0;
       visibility: hidden;
       transform: translateY(-10px);
       transition: all 0.3s ease;
       z-index: 100;
-      margin-top: 5px; // Отступ от навигации
-
-      &-list {
-         list-style: none;
-         margin: 0;
-         padding: 0;
-      }
-
-      &-item {
-         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-         &:last-child {
-            border-bottom: none;
-         }
-      }
+      margin-top: 6px; // Отступ от навигации
 
       &-link {
-         font-family: var(--font-base);
-         font-weight: 400;
-         font-size: 16px; // Точный размер из Figma
          color: var(--color-text-white);
-         text-decoration: none;
-         padding: 12px 16px;
-         display: block;
+         padding-top: 4px;
          transition: all 0.3s ease;
          position: relative;
-         line-height: 1.3;
+
 
          &:hover {
-            background-color: rgba(255, 255, 255, 0.05);
             color: var(--color-accent);
          }
 
          &--active {
             color: var(--color-accent);
-            background-color: rgba(199, 85, 40, 0.1);
+            margin-left: 15px;
+
+            &::before {
+               content: '';
+               position: absolute;
+               left: -15px;
+               top: 50%;
+               width: 7px;
+               height: 7px;
+               background-color: var(--color-accent);
+            }
          }
       }
 
-      &-dot {
-         width: 7px;
-         height: 7px;
-         background-color: var(--color-accent);
-         border-radius: 50%;
-         position: absolute;
-         left: 16px;
-         top: 50%;
-         transform: translateY(-50%);
-      }
+
    }
 
-   // Иконки для десктопа
+   // Иконки действий
    &__actions {
-      display: none;
-
-      @include lg-up {
-         display: flex;
-         align-items: center;
-         gap: 20px;
-      }
-   }
-
-   &__action-btn {
-      background: none;
-      border: none;
-      color: var(--color-text-white);
-      cursor: pointer;
-      padding: 0;
-      width: 20px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: color 0.3s ease;
-
-      &:hover {
-         color: var(--color-accent);
-      }
-
-      svg {
-         width: 100%;
-         height: 100%;
-      }
-   }
-
-   // Мобильные иконки
-   &__mobile-actions {
       display: flex;
       align-items: center;
       gap: 20px;
-
-      @include lg-up {
-         display: none;
-      }
    }
 
-   &__mobile-btn {
+   &__action-btn {
       background: none;
       border: none;
       color: var(--color-text-white);
@@ -220,6 +158,17 @@
          flex-direction: column;
          justify-content: space-between;
          padding: 0;
+
+         @include lg-up {
+            display: none; // Скрываем бургер на десктопе
+         }
+      }
+
+      &--phone,
+      &--search {
+         @include lg-up {
+            display: flex; // Показываем на десктопе
+         }
       }
    }
 
@@ -229,206 +178,10 @@
       background-color: var(--color-text-white);
       transition: all 0.3s ease;
    }
-
-   // Мобильное меню
-   &__mobile-menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-color: var(--color-background-body);
-      z-index: 2000;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      overflow: hidden;
-
-      &--active {
-         opacity: 1;
-         visibility: visible;
-      }
-
-      &-content {
-         position: relative;
-         width: 100%;
-         height: 100%;
-         padding: 30px 15px;
-         display: flex;
-         flex-direction: column;
-      }
-
-      &-bg {
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background-image: url('/assets/images/contacts/contacts-mobile.jpg');
-         background-size: cover;
-         background-position: center;
-         opacity: 0.3;
-         z-index: -1;
-      }
-
-      &-header {
-         display: flex;
-         align-items: center;
-         justify-content: space-between;
-         margin-bottom: 40px;
-      }
-
-      &-logo {
-         display: flex;
-         flex-direction: column;
-         align-items: flex-start;
-
-         &-main {
-            display: flex;
-            align-items: center;
-         }
-
-         &-text {
-            font-family: var(--font-accent);
-            font-weight: 700;
-            font-size: 21.5px; // Точный размер из Figma
-            text-transform: uppercase;
-            color: var(--color-text-white);
-            line-height: 1.1;
-         }
-
-         &-subtitle {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 2px;
-            position: relative;
-         }
-
-         &-care,
-         &-restoration {
-            @include mobile-body-5;
-            color: var(--color-text-white);
-            line-height: 1.1;
-         }
-
-         &-dot {
-            width: 7px;
-            height: 7px;
-            background-color: var(--color-text-white);
-            border-radius: 50%;
-         }
-
-         &-line {
-            width: 0;
-            height: 11px;
-            border-left: 1px solid var(--color-text-white);
-            margin-left: 2px;
-         }
-      }
-
-      &-actions {
-         display: flex;
-         align-items: center;
-         gap: 20px;
-      }
-
-      &-btn {
-         background: none;
-         border: none;
-         color: var(--color-text-white);
-         cursor: pointer;
-         padding: 0;
-         width: 20px;
-         height: 20px;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         transition: color 0.3s ease;
-
-         &:hover {
-            color: var(--color-accent);
-         }
-
-         svg {
-            width: 100%;
-            height: 100%;
-         }
-      }
-
-      &-nav {
-         flex: 1;
-         margin-bottom: 40px;
-      }
-
-      &-nav-list {
-         list-style: none;
-         margin: 0;
-         padding: 0;
-      }
-
-      &-nav-item {
-         margin-bottom: 15px;
-      }
-
-      &-nav-link {
-         font-family: var(--font-accent);
-         font-weight: 700;
-         font-size: 50px; // Точный размер из Figma
-         color: var(--color-text-black);
-         text-decoration: none;
-         text-transform: uppercase;
-         display: block;
-         transition: color 0.3s ease;
-         line-height: 0.9;
-
-         &:hover {
-            color: var(--color-text-white);
-         }
-
-         &--services {
-            color: var(--color-text-white);
-            font-size: 50px; // Точный размер из Figma
-            line-height: 1.1;
-         }
-      }
-
-      &-submenu {
-         list-style: none;
-         margin: 15px 0 0 0;
-         padding: 0;
-      }
-
-      &-submenu-item {
-         margin-bottom: 8px;
-      }
-
-      &-submenu-link {
-         font-family: var(--font-base);
-         font-weight: 400;
-         font-size: 20px; // Точный размер из Figma
-         color: var(--color-text-white);
-         text-decoration: none;
-         display: block;
-         transition: color 0.3s ease;
-         line-height: 1.2;
-
-         &:hover {
-            color: var(--color-accent);
-         }
-      }
-
-
-   }
 }
 
 // Состояния для мобильного меню
 .header--mobile-menu-open {
-   .header__mobile-menu {
-      opacity: 1;
-      visibility: visible;
-   }
-
    .header__burger-line {
       &:nth-child(1) {
          transform: rotate(45deg) translate(5px, 5px);
@@ -442,6 +195,114 @@
          transform: rotate(-45deg) translate(7px, -6px);
       }
    }
+
+   // Мобильная навигация
+   .header__nav {
+      @include lg-up {
+         display: block; // На десктопе всегда показываем
+      }
+
+      // На мобильных показываем как полноэкранное меню
+      @media (max-width: 767px) {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100vh;
+         background-color: var(--color-background-body);
+         z-index: 2000;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         padding: 30px 15px;
+
+         // Фон изображение
+         &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/assets/images/contacts/contacts-mobile.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: -1;
+         }
+
+         .header__nav-list {
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-start;
+         }
+
+         .header__nav-link {
+            font-family: var(--font-accent);
+            font-weight: 700;
+            font-size: 50px; // Точный размер из Figma
+            color: var(--color-text-black);
+            text-transform: uppercase;
+            line-height: 0.9;
+
+            &:hover {
+               color: var(--color-text-white);
+            }
+
+            &--services {
+               color: var(--color-text-white);
+               font-size: 50px; // Точный размер из Figma
+               line-height: 1.1;
+            }
+         }
+
+         // Подменю для мобильных
+         .header__dropdown {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            background: none;
+            border: none;
+            margin-top: 15px;
+            margin-left: 20px;
+
+            .header__dropdown-list {
+               list-style: none;
+               margin: 0;
+               padding: 0;
+            }
+
+            .header__dropdown-item {
+               margin-bottom: 8px;
+               border: none;
+            }
+
+            .header__dropdown-link {
+               font-family: var(--font-base);
+               font-weight: 400;
+               font-size: 20px; // Точный размер из Figma
+               color: var(--color-text-white);
+               padding: 0;
+               line-height: 1.2;
+
+               &:hover {
+                  color: var(--color-accent);
+                  background: none;
+               }
+
+               &--active {
+                  color: var(--color-accent);
+                  background: none;
+               }
+            }
+
+            .header__dropdown-dot {
+               display: none; // Скрываем точку на мобильных
+            }
+         }
+      }
+   }
 }
 
 // Анимации для выпадающего меню
@@ -453,21 +314,17 @@
 
 // Адаптивность для разных размеров экранов
 @include sm-up {
-   .header {
-      &__mobile-menu {
-         &-content {
-            padding: 30px 20px;
-         }
+   .header--mobile-menu-open .header__nav {
+      @media (max-width: 767px) {
+         padding: 30px 20px;
       }
    }
 }
 
 @include md-up {
-   .header {
-      &__mobile-menu {
-         &-content {
-            padding: 30px 25px;
-         }
+   .header--mobile-menu-open .header__nav {
+      @media (max-width: 767px) {
+         padding: 30px 25px;
       }
    }
 }
