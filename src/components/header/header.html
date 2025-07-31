@@ -1,3 +1,220 @@
 <header class="header">
-  <div class="container"></div>
+  <div class="container header__container">
+    <div class="header__content">
+      <!-- Логотип -->
+      <div class="header__logo">
+        <img src="/assets/icons/header-logo.svg" alt="Logo" class="header__logo-icon" />
+      </div>
+
+      <!-- Навигация для десктопа -->
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Home</a>
+          </li>
+          <li class="header__nav-item header__nav-item--services">
+            <a href="#" class="header__nav-link header__nav-link--services">
+              Services
+              <svg class="header__nav-arrow" width="8" height="5" viewBox="0 0 8 5" fill="none">
+                <path d="M1 1L4 4L7 1" stroke="currentColor" stroke-width="1" />
+              </svg>
+            </a>
+            <!-- Выпадающее меню Services -->
+            <div class="header__dropdown">
+              <ul class="header__dropdown-list">
+                <li class="header__dropdown-item">
+                  <a href="#" class="header__dropdown-link">Residential furniture service</a>
+                </li>
+                <li class="header__dropdown-item">
+                  <a href="#" class="header__dropdown-link header__dropdown-link--active">
+                    <div class="header__dropdown-dot"></div>
+                    Automotive interior restoration
+                  </a>
+                </li>
+                <li class="header__dropdown-item">
+                  <a href="#" class="header__dropdown-link">Commercial furniture repair</a>
+                </li>
+                <li class="header__dropdown-item">
+                  <a href="#" class="header__dropdown-link">Leather cleaning&protecting</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">About</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Blog</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Price</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Иконки для десктопа -->
+      <div class="header__actions">
+        <button class="header__action-btn header__action-btn--search" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M19 19L13 13M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+          </svg>
+        </button>
+        <button class="header__action-btn header__action-btn--phone" aria-label="Call">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M18.5 14.5C18.5 15.8807 17.3807 17 16 17H4C2.61929 17 1.5 15.8807 1.5 14.5V5.5C1.5 4.11929 2.61929 3 4 3H16C17.3807 3 18.5 4.11929 18.5 5.5V14.5Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <path d="M7 6H13M7 8H11M7 10H13" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Мобильные иконки -->
+      <div class="header__mobile-actions">
+        <button class="header__mobile-btn header__mobile-btn--phone" aria-label="Call">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M18.5 14.5C18.5 15.8807 17.3807 17 16 17H4C2.61929 17 1.5 15.8807 1.5 14.5V5.5C1.5 4.11929 2.61929 3 4 3H16C17.3807 3 18.5 4.11929 18.5 5.5V14.5Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <path d="M7 6H13M7 8H11M7 10H13" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+        </button>
+        <button class="header__mobile-btn header__mobile-btn--search" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M19 19L13 13M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+          </svg>
+        </button>
+        <button class="header__mobile-btn header__mobile-btn--burger" aria-label="Open menu">
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Мобильное меню -->
+  <div class="header__mobile-menu">
+    <div class="header__mobile-menu-content">
+      // Фон изображение
+      <div class="header__mobile-menu-bg"></div>
+
+      <!-- Заголовок мобильного меню -->
+      <div class="header__mobile-menu-header">
+        <div class="header__mobile-menu-logo">
+          <div class="header__mobile-menu-logo-main">
+            <span class="header__mobile-menu-logo-text">dava leather</span>
+          </div>
+          <div class="header__mobile-menu-logo-subtitle">
+            <span class="header__mobile-menu-logo-care">care</span>
+            <span class="header__mobile-menu-logo-restoration">restoration</span>
+            <div class="header__mobile-menu-logo-dot"></div>
+            <div class="header__mobile-menu-logo-line"></div>
+          </div>
+        </div>
+
+        <div class="header__mobile-menu-actions">
+          <button class="header__mobile-menu-btn header__mobile-menu-btn--phone" aria-label="Call">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M18.5 14.5C18.5 15.8807 17.3807 17 16 17H4C2.61929 17 1.5 15.8807 1.5 14.5V5.5C1.5 4.11929 2.61929 3 4 3H16C17.3807 3 18.5 4.11929 18.5 5.5V14.5Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path d="M7 6H13M7 8H11M7 10H13" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </button>
+          <button
+            class="header__mobile-menu-btn header__mobile-menu-btn--search"
+            aria-label="Search"
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M19 19L13 13M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+          </button>
+          <button
+            class="header__mobile-menu-btn header__mobile-menu-btn--close"
+            aria-label="Close menu"
+          >
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M1 1L21 21M21 1L1 21" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Навигация мобильного меню -->
+      <nav class="header__mobile-nav">
+        <ul class="header__mobile-nav-list">
+          <li class="header__mobile-nav-item">
+            <a href="#" class="header__mobile-nav-link">home</a>
+          </li>
+          <li class="header__mobile-nav-item">
+            <a href="#" class="header__mobile-nav-link header__mobile-nav-link--services"
+              >services</a
+            >
+            <ul class="header__mobile-submenu">
+              <li class="header__mobile-submenu-item">
+                <a href="#" class="header__mobile-submenu-link">Residential furniture service</a>
+              </li>
+              <li class="header__mobile-submenu-item">
+                <a href="#" class="header__mobile-submenu-link">Automotive interior restoration</a>
+              </li>
+              <li class="header__mobile-submenu-item">
+                <a href="#" class="header__mobile-submenu-link">Commercial furniture repair</a>
+              </li>
+              <li class="header__mobile-submenu-item">
+                <a href="#" class="header__mobile-submenu-link">Leather cleaning & protecting</a>
+              </li>
+            </ul>
+          </li>
+          <li class="header__mobile-nav-item">
+            <a href="#" class="header__mobile-nav-link">price</a>
+          </li>
+          <li class="header__mobile-nav-item">
+            <a href="#" class="header__mobile-nav-link">blog</a>
+          </li>
+          <li class="header__mobile-nav-item">
+            <a href="#" class="header__mobile-nav-link">about</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Кнопка отправки запроса -->
+      <div class="header__mobile-cta">
+        <div class="header__mobile-cta-text">
+          <p>Send a request</p>
+          <p>for free</p>
+          <p>consultation and calculation</p>
+          <p>of costs</p>
+        </div>
+        <div class="header__mobile-cta-btn">
+          <button class="header__mobile-request-btn">
+            <span>Send a request</span>
+            <div class="header__mobile-request-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M1 1L21 21M21 1L1 21" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
