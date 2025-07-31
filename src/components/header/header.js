@@ -73,13 +73,6 @@ export function initHeader() {
     }
   }
 
-  // Обработчик клика по кнопке отправки запроса
-  function handleRequestBtnClick(event) {
-    event.preventDefault();
-    // Здесь можно добавить логику отправки запроса
-    console.log('Send request clicked');
-  }
-
   // Обработчик клика по иконкам поиска и телефона
   function handleActionClick(event) {
     const btn = event.target.closest('.header__action-btn, .header__mobile-btn');
@@ -117,12 +110,6 @@ export function initHeader() {
     // Ссылки в мобильном меню
     if (mobileMenu) {
       mobileMenu.addEventListener('click', handleMobileLinkClick);
-    }
-
-    // Кнопка отправки запроса
-    const requestBtn = header?.querySelector('.header__mobile-request-btn');
-    if (requestBtn) {
-      requestBtn.addEventListener('click', handleRequestBtnClick);
     }
 
     // Иконки действий

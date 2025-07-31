@@ -22,7 +22,7 @@
    }
 
    // Логотип
-   &__logo {}
+   // &__logo {}
 
    // Навигация для десктопа
    &__nav {
@@ -418,74 +418,7 @@
          }
       }
 
-      &-cta {
-         margin-top: auto;
-      }
 
-      &-cta-text {
-         margin-bottom: 20px;
-
-         p {
-            font-family: var(--font-base);
-            font-weight: 400;
-            font-size: 20px; // Точный размер из Figma
-            color: var(--color-text-white);
-            margin: 0 0 5px 0;
-            line-height: 1.2;
-         }
-      }
-
-      &-cta-btn {
-         display: flex;
-      }
-
-      &-request-btn {
-         display: flex;
-         align-items: center;
-         justify-content: space-between;
-         width: 100%;
-         max-width: 285px;
-         height: 52px;
-         background-color: transparent;
-         border: 1px solid var(--color-text-white);
-         border-right: none;
-         color: var(--color-text-white);
-         cursor: pointer;
-         transition: all 0.3s ease;
-         padding: 0 20px;
-         position: relative;
-
-         &:hover {
-            background-color: var(--color-accent);
-            border-color: var(--color-accent);
-         }
-
-         span {
-            font-family: var(--font-base);
-            font-weight: 400;
-            font-size: 16px; // Точный размер из Figma
-            line-height: 1.3;
-         }
-      }
-
-      &-request-icon {
-         width: 60px;
-         height: 52px;
-         background-color: var(--color-accent);
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         margin-left: auto;
-         position: absolute;
-         right: 0;
-         top: 0;
-
-         svg {
-            width: 22px;
-            height: 22px;
-            color: var(--color-text-white);
-         }
-      }
    }
 }
 
