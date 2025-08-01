@@ -1,11 +1,6 @@
 @use '../../styles/base/vars' as *;
 @use '../../styles/base/mixins' as *;
 
-.arrow-icon {
-   fill: var(--color-text-white);
-   width: 260px;
-   height: 300px;
-}
 
 .about-hero {
    .about-hero__container {
@@ -88,12 +83,17 @@
 
    }
 
-   &__cta {
+   &__cta-btn {
       margin-top: 1.875rem;
       height: 3.25rem;
       display: flex;
       justify-content: space-between;
-      cursor: pointer;
+      @include mobile-body-3;
+      color: var(--color-accent);
+      background-color: var(--color-primary-background2);
+      border: 1px solid var(--color-accent);
+      transition: background-color 0.3s, color 0.3s;
+
 
       @include lg-up {
          flex: 0 1 23.85%;
@@ -103,26 +103,22 @@
          margin-left: auto;
       }
 
-      &-btn {
+      &:hover,
+      &:focus {
+         background-color: var(--color-accent);
+         color: var(--color-primary-background2);
+      }
+
+      &-text {
          flex: 0 0 82.61%;
-         color: var(--color-accent);
-         @include mobile-body-3;
-         border: 1px solid var(--color-accent);
 
-         &:hover,
-         &:focus {
-            background-color: var(--color-accent);
-            color: var(--color-primary-background2);
-            cursor: pointer;
-         }
-
-
+         display: flex;
+         align-items: center;
+         justify-content: center;
 
          @include lg-up {
             flex: 0 0 80.65%;
          }
-
-
       }
 
       &-icon {
@@ -225,3 +221,9 @@
    }
 
 }
+
+// .arrow-icon {
+//    fill: var(--color-text-white);
+//    width: 260px;
+//    height: 300px;
+// }
