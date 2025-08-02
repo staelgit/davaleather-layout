@@ -5,10 +5,12 @@
    position: absolute;
    z-index: var(--level-header);
    width: 100%;
+   // isolation: isolate;
 
    .header__container {
       padding-top: 1.875rem;
       padding-bottom: 1.875rem;
+      background: none;
 
       @include lg-up {
          padding-top: 1.625rem;
@@ -21,6 +23,16 @@
       align-items: center;
       justify-content: space-between;
 
+   }
+
+   &__logo-icon {
+      &-elements {
+         fill: var(--color-accent);
+      }
+
+      &-separator {
+         stroke: var(--color-accent);
+      }
    }
 
 
@@ -73,6 +85,9 @@
 
       &-arrow {
          transition: transform 0.3s ease;
+         width: 8px;
+         height: 5px;
+
       }
 
       &-item--services:hover &-arrow {
@@ -88,9 +103,7 @@
       min-width: 250px;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-10px);
       transition: all 0.3s ease;
-      z-index: 100;
       margin-top: 6px; // Отступ от навигации
 
       &-link {
@@ -107,6 +120,7 @@
          &--active {
             color: var(--color-accent);
             margin-left: 15px;
+            cursor: default;
 
             &::before {
                content: '';
@@ -131,11 +145,7 @@
    }
 
    &__action-btn {
-      background: none;
-      border: none;
       color: var(--color-text-white);
-      cursor: pointer;
-      padding: 0;
       width: 20px;
       height: 20px;
       display: flex;
@@ -154,20 +164,18 @@
 
       &--burger {
          width: 20px;
-         height: 16px;
+         height: 18px;
          flex-direction: column;
          justify-content: space-between;
-         padding: 0;
 
          @include lg-up {
             display: none; // Скрываем бургер на десктопе
          }
       }
 
-      &--phone,
-      &--search {
+      &--phone {
          @include lg-up {
-            display: flex; // Показываем на десктопе
+            order: 1;
          }
       }
    }
@@ -182,9 +190,21 @@
 
 // Состояния для мобильного меню
 .header--mobile-menu-open {
+
+
+   .header__logo-icon {
+      &-elements {
+         fill: var(--color-text-white);
+      }
+
+      &-separator {
+         stroke: var(--color-text-white);
+      }
+   }
+
    .header__burger-line {
       &:nth-child(1) {
-         transform: rotate(45deg) translate(5px, 5px);
+         transform: translateY(8px) rotate(45deg);
       }
 
       &:nth-child(2) {
@@ -192,7 +212,7 @@
       }
 
       &:nth-child(3) {
-         transform: rotate(-45deg) translate(7px, -6px);
+         transform: translateY(-8px) rotate(-45deg);
       }
    }
 
@@ -204,127 +224,98 @@
 
       // На мобильных показываем как полноэкранное меню
       @media (max-width: 767px) {
-         position: fixed;
+         display: block;
+         position: absolute;
+         z-index: var(--level-nav);
          top: 0;
          left: 0;
          width: 100%;
          height: 100vh;
-         background-color: var(--color-background-body);
-         z-index: 2000;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         padding: 30px 15px;
+         background-color: var(--color-accent);
+         padding: 102px 15px 15px;
 
-         // Фон изображение
-         &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('/assets/images/contacts/contacts-mobile.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.3;
-            z-index: -1;
-         }
 
          .header__nav-list {
-            flex-direction: column;
-            gap: 15px;
-            align-items: flex-start;
+            display: block;
+
+         }
+
+         .header__nav-item {
+            margin-bottom: 10px;
          }
 
          .header__nav-link {
-            font-family: var(--font-accent);
-            font-weight: 700;
-            font-size: 50px; // Точный размер из Figma
+            @include mobile-H1;
             color: var(--color-text-black);
             text-transform: uppercase;
-            line-height: 0.9;
-
-            &:hover {
-               color: var(--color-text-white);
-            }
-
-            &--services {
-               color: var(--color-text-white);
-               font-size: 50px; // Точный размер из Figma
-               line-height: 1.1;
-            }
          }
+
+         .header__nav-link--services {
+            gap: 9px;
+            align-items: flex-start;
+         }
+
+         .header__nav-arrow {
+            width: 16px;
+            height: 10px;
+            margin-top: 3px;
+         }
+
+         // .header--services-menu-open .header__dropdown {
+
+         //    position: static;
+         //    opacity: 1;
+         //    visibility: visible;
+
+         // }
 
          // Подменю для мобильных
          .header__dropdown {
             position: static;
             opacity: 1;
             visibility: visible;
-            transform: none;
-            background: none;
-            border: none;
-            margin-top: 15px;
-            margin-left: 20px;
+            // transform: none;
+            // background: none;
+            // border: none;
+            // margin-top: 15px;
+            // margin-left: 20px;
 
             .header__dropdown-list {
-               list-style: none;
-               margin: 0;
-               padding: 0;
+               // list-style: none;
+               // margin: 0;
+               // padding: 0;
             }
 
             .header__dropdown-item {
                margin-bottom: 8px;
-               border: none;
+               // border: none;
             }
 
             .header__dropdown-link {
-               font-family: var(--font-base);
-               font-weight: 400;
-               font-size: 20px; // Точный размер из Figma
+
+               @include mobile-body-2;
                color: var(--color-text-white);
                padding: 0;
-               line-height: 1.2;
 
-               &:hover {
-                  color: var(--color-accent);
-                  background: none;
-               }
 
                &--active {
-                  color: var(--color-accent);
-                  background: none;
+                  color: var(--color-text-white);
+                  margin-left: 0;
+
+                  &::before {
+                     display: none;
+                  }
                }
             }
 
-            .header__dropdown-dot {
-               display: none; // Скрываем точку на мобильных
-            }
          }
       }
    }
 }
 
 // Анимации для выпадающего меню
-.header__nav-item--services:hover .header__dropdown {
-   opacity: 1;
-   visibility: visible;
-   transform: translateY(0);
-}
-
-// Адаптивность для разных размеров экранов
-@include sm-up {
-   .header--mobile-menu-open .header__nav {
-      @media (max-width: 767px) {
-         padding: 30px 20px;
-      }
-   }
-}
-
-@include md-up {
-   .header--mobile-menu-open .header__nav {
-      @media (max-width: 767px) {
-         padding: 30px 25px;
-      }
-   }
-}
+// .header__nav-item--services:hover .header__dropdown {
+//    opacity: 1;
+//    visibility: visible;
+//    transform: translateY(0);
+// }
