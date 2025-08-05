@@ -2,6 +2,7 @@ export function initHeader() {
   console.log('initHeader');
   const header = document.querySelector('.header');
   const burgerBtn = header?.querySelector('.header__action-btn--burger');
+  const servicesDropdown = header?.querySelector('.header__nav-item--services');
   const body = document.body;
 
   // Функция открытия мобильного меню
@@ -36,6 +37,13 @@ export function initHeader() {
     }
   }
 
+  // Обработчик клика вне выпадающего меню Services
+  function handleServicesOutsideClick(event) {
+    if (servicesDropdown && !servicesDropdown.contains(event.target)) {
+      closeServicesDropdown();
+    }
+  }
+
   // Обработчик нажатия клавиши Escape
   function handleEscapeKey(event) {
     if (event.key === 'Escape') {
@@ -55,14 +63,38 @@ export function initHeader() {
     }
   }
 
+  // Функция закрытия выпадающего меню Services
+  function closeServicesDropdown() {
+    if (servicesDropdown) {
+      servicesDropdown.classList.remove('header__nav-item--active');
+    }
+  }
+
+  // Функция переключения выпадающего меню Services
+  function toggleServicesDropdown() {
+    if (servicesDropdown) {
+      servicesDropdown.classList.toggle('header__nav-item--active');
+    }
+  }
+
   // Обработчик клика по ссылкам в навигации
   function handleNavLinkClick(event) {
     const link = event.target.closest('.header__nav-link');
     if (link && !link.classList.contains('header__nav-link--services')) {
       // Закрываем мобильное меню только на мобильных устройствах
       if (window.innerWidth < 768) {
-        closeMobileMenu();
+        // closeMobileMenu();
       }
+    }
+  }
+
+  // Обработчик клика по выпадающему меню Services
+  function handleServicesDropdownClick(event) {
+    const toggleBtn = event.target.closest('[data-dropdown-toggle]');
+    if (toggleBtn) {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleServicesDropdown();
     }
   }
 
@@ -95,6 +127,13 @@ export function initHeader() {
       nav.addEventListener('click', handleNavLinkClick);
     }
 
+    // Выпадающее меню Services
+    if (header) {
+      header.addEventListener('click', handleServicesDropdownClick);
+      // Обработчик клика вне выпадающего меню
+      document.addEventListener('click', handleServicesOutsideClick);
+    }
+
     // Иконки действий
     if (header) {
       header.addEventListener('click', handleActionClick);
@@ -109,6 +148,9 @@ export function initHeader() {
     if (window.innerWidth >= 768) {
       // lg-up breakpoint
       closeMobileMenu();
+    } else {
+      // На мобильных устройствах закрываем выпадающее меню Services
+      closeServicesDropdown();
     }
   }
 
@@ -130,6 +172,8 @@ export function initHeader() {
       openMobileMenu,
       closeMobileMenu,
       toggleMobileMenu,
+      closeServicesDropdown,
+      toggleServicesDropdown,
     };
   }
 
