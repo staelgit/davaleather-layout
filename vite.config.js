@@ -9,6 +9,7 @@ const partDirs = [
   'src/components/footer',
   'src/components/contacts',
   'src/components/about-hero',
+  'src/components/layout',
 ];
 
 const __filename = fileURLToPath(import.meta.url);
@@ -21,6 +22,11 @@ export default defineConfig({
     handlebars({
       partialDirectory: partDirs,
       reloadOnPartialChange: true,
+      helpers: {
+        eq: function (a, b) {
+          return a === b;
+        },
+      },
     }),
   ],
   css: {
@@ -41,6 +47,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'src/index.html'),
         about: resolve(__dirname, 'src/pages/about/index.html'),
+        price: resolve(__dirname, 'src/pages/price/index.html'),
       },
     },
   },
