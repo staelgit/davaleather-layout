@@ -1,0 +1,14 @@
+// TODO: remove this after implementation
+a.unimplemented {
+   opacity: 0.6;
+   position: relative;
+}
+
+a.unimplemented::after {
+   content: " (TODO)";
+   color: red;
+   font-size: 0.8em;
+   position: absolute;
+   top: 100%;
+   left: 0;
+}
