@@ -9,8 +9,20 @@ const partDirs = [
   'src/components/footer',
   'src/components/contacts',
   'src/components/about-hero',
-  'src/components/layout',
+  'src/components/head',
 ];
+
+const pageData = {
+  '/index.html': {
+    title: 'Dava Leather',
+  },
+  '/pages/about/index.html': {
+    title: 'About us - Dava Leather',
+  },
+  '/pages/price/index.html': {
+    title: 'Price - Dava Leather',
+  },
+};
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,13 +32,11 @@ export default defineConfig({
   base: './',
   plugins: [
     handlebars({
+      context(pagePath) {
+        return pageData[pagePath];
+      },
       partialDirectory: partDirs,
       reloadOnPartialChange: true,
-      helpers: {
-        eq: function (a, b) {
-          return a === b;
-        },
-      },
     }),
   ],
   css: {
