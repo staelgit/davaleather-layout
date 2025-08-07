@@ -66,14 +66,14 @@ export function initHeader() {
   // Функция закрытия выпадающего меню Services
   function closeServicesDropdown() {
     if (servicesDropdown) {
-      servicesDropdown.classList.remove('header__nav-item--active');
+      servicesDropdown.classList.remove('header__nav-item--expanded');
     }
   }
 
   // Функция переключения выпадающего меню Services
   function toggleServicesDropdown() {
     if (servicesDropdown) {
-      servicesDropdown.classList.toggle('header__nav-item--active');
+      servicesDropdown.classList.toggle('header__nav-item--expanded');
     }
   }
 
