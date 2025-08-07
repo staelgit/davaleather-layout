@@ -2,7 +2,7 @@ export function initHeader() {
   console.log('initHeader');
   const header = document.querySelector('.header');
   const burgerBtn = header?.querySelector('.header__action-btn--burger');
-  const servicesDropdown = header?.querySelector('.header__nav-item--services');
+  const servicesDropdown = header?.querySelector('.header__nav-item--has-dropdown');
   const body = document.body;
 
   // Функция открытия мобильного меню
@@ -80,7 +80,7 @@ export function initHeader() {
   // Обработчик клика по ссылкам в навигации
   function handleNavLinkClick(event) {
     const link = event.target.closest('.header__nav-link');
-    if (link && !link.classList.contains('header__nav-link--services')) {
+    if (link && !link.classList.contains('header__nav-link--dropdown-trigger')) {
       // Закрываем мобильное меню только на мобильных устройствах
       if (window.innerWidth < 768) {
         // closeMobileMenu();
