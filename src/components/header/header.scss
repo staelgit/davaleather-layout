@@ -85,10 +85,11 @@
       &-link {
          color: var(--color-text-white);
          @include desktop-body-3;
-         transition: color 0.3s ease;
 
          &:hover {
             color: var(--color-accent);
+            transition: color 0.3s ease;
+
          }
 
          &--dropdown-trigger {
