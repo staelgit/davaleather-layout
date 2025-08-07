@@ -10,6 +10,7 @@ const partDirs = [
   'src/components/contacts',
   'src/components/about-hero',
   'src/components/head',
+  'src/components/placeholder',
 ];
 
 const pageData = {
