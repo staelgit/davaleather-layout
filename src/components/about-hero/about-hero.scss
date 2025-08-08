@@ -198,6 +198,15 @@
          justify-content: flex-end;
          gap: 1.25rem;
 
+         .arrow-icon {
+            fill: var(--color-text-white);
+         }
+
+         .swiper-button-disabled {
+            .arrow-icon {
+               fill: var(--color-secondary-disabled);
+            }
+         }
 
       }
 
