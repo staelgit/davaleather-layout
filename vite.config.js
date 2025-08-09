@@ -59,7 +59,7 @@ const pageData = {
       automotive: true,
       services: true,
     },
-    basePath: basePath,
+    basePath,
   },
   '/pages/cleaning/index.html': {
     title: 'Leather Cleaning & Protecting - Dava Leather',
@@ -82,14 +82,14 @@ const pageData = {
     highlightActiveMenuItems: {
       blog: true,
     },
-    basePath: basePath,
+    basePath,
   },
   '/pages/blog/car-leather-dangers/index.html': {
     title: 'Why is improper cleaning of a car’s leather interior dangerous? - Dava Leather',
     highlightActiveMenuItems: {
       blog: true,
     },
-    basePath: basePath,
+    basePath,
   },
   '/pages/blog/sofa-rehab/index.html': {
     title: 'Can a well-worn leather sofa be rehabbed? - Dava Leather',
