@@ -4,6 +4,8 @@ import { fileURLToPath } from 'url';
 import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
 
+const basePath = '/davaleather-layout';
+
 const partDirs = [
   'src/components/header',
   'src/components/footer',
@@ -19,18 +21,21 @@ const pageData = {
     highlightActiveMenuItems: {
       home: true,
     },
+    basePath,
   },
   '/pages/about/index.html': {
     title: 'About us - Dava Leather',
     highlightActiveMenuItems: {
       about: true,
     },
+    basePath,
   },
   '/pages/price/index.html': {
     title: 'Price - Dava Leather',
     highlightActiveMenuItems: {
       price: true,
     },
+    basePath,
   },
   '/pages/residential/index.html': {
     title: 'Residential Furniture Service - Dava Leather',
@@ -38,6 +43,7 @@ const pageData = {
       residential: true,
       services: true,
     },
+    basePath,
   },
   '/pages/commercial/index.html': {
     title: 'Commercial Furniture Repair - Dava Leather',
@@ -45,6 +51,7 @@ const pageData = {
       commercial: true,
       services: true,
     },
+    basePath,
   },
   '/pages/automotive/index.html': {
     title: 'Automotive Interior Restoration - Dava Leather',
@@ -52,6 +59,7 @@ const pageData = {
       automotive: true,
       services: true,
     },
+    basePath: basePath,
   },
   '/pages/cleaning/index.html': {
     title: 'Leather Cleaning & Protecting - Dava Leather',
@@ -59,12 +67,14 @@ const pageData = {
       cleaning: true,
       services: true,
     },
+    basePath,
   },
   '/pages/blog/index.html': {
     title: 'Blog - Dava Leather',
     highlightActiveMenuItems: {
       blog: true,
     },
+    basePath,
   },
 
   '/pages/blog/leather-cracks/index.html': {
@@ -72,18 +82,21 @@ const pageData = {
     highlightActiveMenuItems: {
       blog: true,
     },
+    basePath: basePath,
   },
   '/pages/blog/car-leather-dangers/index.html': {
     title: 'Why is improper cleaning of a car’s leather interior dangerous? - Dava Leather',
     highlightActiveMenuItems: {
       blog: true,
     },
+    basePath: basePath,
   },
   '/pages/blog/sofa-rehab/index.html': {
     title: 'Can a well-worn leather sofa be rehabbed? - Dava Leather',
     highlightActiveMenuItems: {
       blog: true,
     },
+    basePath,
   },
   '/pages/blog/fake-leather/index.html': {
     title:
@@ -91,6 +104,7 @@ const pageData = {
     highlightActiveMenuItems: {
       blog: true,
     },
+    basePath,
   },
 };
 
@@ -99,7 +113,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   root: 'src',
-  base: './',
+  base: basePath,
   plugins: [
     handlebars({
       context(pagePath) {
