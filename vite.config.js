@@ -99,7 +99,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   root: 'src',
-  base: './',
+  base: '/davaleather-layout/',
   plugins: [
     handlebars({
       context(pagePath) {
