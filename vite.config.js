@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
 
-const basePath = '/davaleather-layout';
+const basePath = process.env.NODE_ENV === 'development' ? '' : '/davaleather-layout';
 
 const partDirs = [
   'src/components/header',
