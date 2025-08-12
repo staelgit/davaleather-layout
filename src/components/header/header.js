@@ -109,8 +109,12 @@ export function initHeader() {
       // Логика для поиска
       console.log('Search clicked');
     } else if (btn.classList.contains('header__action-btn--phone')) {
-      // Логика для звонка
-      console.log('Phone clicked');
+      // Открываем модал звонка
+      if (window.modalManager) {
+        window.modalManager.open('phone');
+      } else {
+        console.warn('Modal manager not initialized');
+      }
     }
   }
 
