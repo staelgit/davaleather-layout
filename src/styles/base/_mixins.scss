@@ -37,6 +37,11 @@
   line-height: 1;
 }
 
+@mixin desktop-H2-5 {
+  font-family: var(--font-accent);
+  font-size: 3rem; // 48px
+}
+
 @mixin desktop-H3 {
   font-family: var(--font-accent);
   font-size: 1.875rem; // 30px

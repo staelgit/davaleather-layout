@@ -13,6 +13,8 @@ const partDirs = [
   'src/components/about-hero',
   'src/components/head',
   'src/components/placeholder',
+  'src/components/main-hero',
+  'src/components/cta-button',
 ];
 
 const pageData = {
