@@ -41,22 +41,18 @@
    left: 50%;
    transform: translate(-50%, -50%) scale(0.9);
    transition: transform 0.3s ease;
-   max-width: 92vw;
-   max-height: 90vh;
-   overflow: auto;
 
 }
 
 .modal__content {
    position: relative;
    background: var(--color-primary-background2);
-   border-radius: 8px;
-   padding: 40px 20px;
-   min-width: 320px;
+   width: calc(100vw - 2*var(--mobile-container-padding));
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+   padding: 40px 20px;
 
    @include lg-up {
-      min-width: 382px;
+      width: 382px;
    }
 }
 
@@ -93,9 +89,15 @@
 
 // Стили для контента будут в конкретных модальных окнах
 
-// .modal__body {
-//    padding-right: 16px;
-// }
+.modal__body {
+   min-height: 304px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: auto;
+   max-height: 80vh;
+
+}
 
 // Дополнительные стили для body при открытом модальном окне (если нужны)
 // overflow и padding-right управляются JavaScript
