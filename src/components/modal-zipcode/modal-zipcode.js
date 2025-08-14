@@ -1,4 +1,5 @@
 import { Modal, modalManager } from '../modal/modal.js';
+import { openFormModal } from '../modal-form/modal-form.js';
 
 /**
  * Класс для модального окна zip code
@@ -255,12 +256,13 @@ export class ZipcodeModal extends Modal {
   handleSubmitSuccess(zipcode) {
     console.log('Zip code submitted successfully:', zipcode);
 
-    // Показываем сообщение об успехе или закрываем модал
-    // В реальном приложении здесь может быть переход к следующему шагу
-    alert(`Thank you! We provide service in ${zipcode} area.`);
-
-    // Закрываем модал
+    // Закрываем текущий модал
     this.close();
+
+    // Открываем модал формы записи, передавая zip code
+    setTimeout(() => {
+      openFormModal(zipcode);
+    }, 300); // Небольшая задержка для плавного перехода
 
     // Генерируем событие для внешних обработчиков
     this.modal.dispatchEvent(

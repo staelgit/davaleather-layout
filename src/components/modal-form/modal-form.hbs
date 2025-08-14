@@ -1,0 +1,76 @@
+{{#> modal modalId="form" }}
+<!-- Содержимое модального окна формы записи -->
+
+<div class="modal-form">
+   <div class="modal-form__content">
+      <h2 class="modal-form__title">Fill out the form</h2>
+      <p class="modal-form__description">Get a consultation or schedule an appointment</p>
+
+      <form class="modal-form__form" novalidate>
+
+         <!-- Поле описания проблемы -->
+         <div class="modal-form__field">
+            <label class="modal-form__label" for="issue-input">What's the issue?</label>
+            <textarea id="issue-input" class="modal-form__textarea" placeholder="Enter your text here"
+               rows="4"></textarea>
+         </div>
+
+         <!-- Кнопка загрузки файлов -->
+         <div class="modal-form__field modal-form__field--file">
+            <button type="button" class="modal-form__file-button">
+               add files
+            </button>
+            <input type="file" id="file-input" class="modal-form__file-input" multiple accept="image/*,.pdf,.doc,.docx"
+               hidden>
+            <span class="modal-form__file-hint">attach a photo, if available</span>
+         </div>
+
+         <!-- Поле имени -->
+         <div class="modal-form__field">
+            <label class="modal-form__label" for="name-input">What's your name?*</label>
+            <input type="text" id="name-input" class="modal-form__input" placeholder="Name" required>
+            <div class="modal-form__error" id="name-error"></div>
+         </div>
+
+         <!-- Поле телефона -->
+         <div class="modal-form__field">
+            <label class="modal-form__label" for="phone-input">Phone number*</label>
+            <input type="tel" id="phone-input" class="modal-form__input" placeholder="+1 (" maxlength="14"
+               autocomplete="tel" required>
+            <div class="modal-form__error" id="phone-error"></div>
+         </div>
+
+         <!-- Поле email -->
+         <div class="modal-form__field">
+            <label class="modal-form__label" for="email-input">E-mail*</label>
+            <input type="email" id="email-input" class="modal-form__input" placeholder="myname@example.com"
+               autocomplete="email" required>
+            <div class="modal-form__error" id="email-error"></div>
+         </div>
+
+         <!-- Кнопка отправки -->
+         <div class="modal-form__actions">
+            <button type="submit" class="modal-form__submit">
+               <span class="modal-form__submit-text">Submit form</span>
+               <div class="modal-form__submit-icon">
+                  <svg width="21" height="22" viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M19.2266 3.43758L19.9337 2.73047L18.5195 1.31626L17.8124 2.02336L19.2266 3.43758ZM18.5195 2.73047L17.8124 2.02336L0.778051 19.0577L1.48516 19.7648L2.19226 20.4719L19.2266 3.43758L18.5195 2.73047Z" />
+                     <path
+                        d="M13.8047 3.89062L14.8047 3.89063L14.8047 1.89063L13.8047 1.89062L13.8047 3.89062ZM13.8047 2.89062L13.8047 1.89062L1.48263 1.89062L1.48263 2.89062L1.48262 3.89062L13.8047 3.89062L13.8047 2.89062Z" />
+                     <path
+                        d="M17.375 19.9574L17.375 20.9574L19.375 20.9574L19.375 19.9574L17.375 19.9574ZM18.375 7.11914L17.375 7.11914L17.375 19.9574L18.375 19.9574L19.375 19.9574L19.375 7.11914L18.375 7.11914Z" />
+                  </svg>
+               </div>
+            </button>
+         </div>
+
+         <!-- Соглашение -->
+         <p class="modal-form__agreement">
+            *by submitting this form, you agree to our <a href="#" class="modal-form__agreement-link">Privacy Policy</a>
+         </p>
+
+      </form>
+   </div>
+</div>
+{{/modal}}
