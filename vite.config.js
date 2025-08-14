@@ -17,6 +17,7 @@ const partDirs = [
   'src/components/cta-button',
   'src/components/modal',
   'src/components/modal-phone',
+  'src/components/modal-zipcode',
 ];
 
 const pageData = {
