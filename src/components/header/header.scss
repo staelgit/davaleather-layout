@@ -1,11 +1,24 @@
 @use '../../styles/base/vars' as *;
 @use '../../styles/base/mixins' as *;
+@use '../search/search' as *;
 
 .header {
    position: absolute;
    z-index: var(--level-header);
    width: 100%;
    // isolation: isolate;
+
+   // Позиционирование для поиска
+   .search {
+      @include lg-up {
+         position: absolute;
+         top: 100%;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 324px;
+         margin-top: 6px;
+      }
+   }
 
    .header__container {
       padding-top: 1.875rem;

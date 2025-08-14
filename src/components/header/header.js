@@ -1,3 +1,5 @@
+import { initSearch } from '../search/search.js';
+
 export function initHeader() {
   console.log('initHeader');
   const header = document.querySelector('.header');
@@ -5,9 +7,17 @@ export function initHeader() {
   const servicesDropdown = header?.querySelector('.header__nav-item--has-dropdown');
   const body = document.body;
 
+  // Инициализируем компонент поиска
+  const searchManager = initSearch();
+
   // Функция открытия мобильного меню
   function openMobileMenu() {
     if (!header) return;
+
+    // Закрываем поиск если он открыт
+    if (searchManager) {
+      searchManager.closeSearch();
+    }
 
     header.classList.add('header--mobile-menu-open');
     body.style.overflow = 'hidden';
@@ -106,8 +116,12 @@ export function initHeader() {
     event.preventDefault();
 
     if (btn.classList.contains('header__action-btn--search')) {
-      // Логика для поиска
-      console.log('Search clicked');
+      // Открываем поиск
+      if (searchManager) {
+        searchManager.toggleSearch();
+      } else {
+        console.warn('Search manager not initialized');
+      }
     } else if (btn.classList.contains('header__action-btn--phone')) {
       // Открываем модал звонка
       if (window.modalManager) {
@@ -155,6 +169,10 @@ export function initHeader() {
     } else {
       // На мобильных устройствах закрываем выпадающее меню Services
       closeServicesDropdown();
+      // Закрываем поиск если он открыт (будет перерисован в правильном стиле)
+      if (searchManager) {
+        searchManager.closeSearch();
+      }
     }
   }
 
@@ -178,6 +196,7 @@ export function initHeader() {
       toggleMobileMenu,
       closeServicesDropdown,
       toggleServicesDropdown,
+      searchManager,
     };
   }
 

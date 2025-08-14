@@ -20,6 +20,7 @@ const partDirs = [
   'src/components/modal-zipcode',
   'src/components/modal-form',
   'src/components/modal-success',
+  'src/components/search',
 ];
 
 const pageData = {
