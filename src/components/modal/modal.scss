@@ -86,17 +86,19 @@
 }
 
 .modal__close-icon {
-   color: var(--color-primary-background2);
+   color: var(--color-secondary-gray);
    width: 12px;
    height: 12px;
 }
 
-.modal__body {
-   // Стили для контента будут в конкретных модалах
-}
+// Стили для контента будут в конкретных модальных окнах
 
-// Дополнительные стили для body при открытом модале (если нужны)
-body.modal-open {
-   // overflow и padding-right управляются JavaScript
-   // Здесь можно добавить дополнительные стили при необходимости
-}
+// .modal__body {
+//    padding-right: 16px;
+// }
+
+// Дополнительные стили для body при открытом модальном окне (если нужны)
+// overflow и padding-right управляются JavaScript
+// Здесь можно добавить дополнительные стили при необходимости
+
+// body.modal-open {}

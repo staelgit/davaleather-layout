@@ -15,6 +15,8 @@ const partDirs = [
   'src/components/placeholder',
   'src/components/main-hero',
   'src/components/cta-button',
+  'src/components/modal',
+  'src/components/modal-phone',
 ];
 
 const pageData = {
