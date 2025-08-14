@@ -1,4 +1,5 @@
 import { Modal, modalManager } from '../modal/modal.js';
+import { openSuccessModal } from '../modal-success/modal-success.js';
 
 /**
  * Класс для модального окна формы записи
@@ -430,11 +431,13 @@ export class FormModal extends Modal {
   handleSubmitSuccess() {
     console.log('Form submitted successfully');
 
-    // Показываем сообщение об успехе
-    alert('Thank you! Your form has been submitted successfully. We will contact you soon.');
-
-    // Закрываем модал
+    // Закрываем текущий модал
     this.close();
+
+    // Открываем модал успеха, передавая данные формы
+    setTimeout(() => {
+      openSuccessModal(this.formData);
+    }, 300); // Небольшая задержка для плавного перехода
 
     // Генерируем событие для внешних обработчиков
     this.modal.dispatchEvent(

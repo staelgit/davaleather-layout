@@ -19,6 +19,7 @@ const partDirs = [
   'src/components/modal-phone',
   'src/components/modal-zipcode',
   'src/components/modal-form',
+  'src/components/modal-success',
 ];
 
 const pageData = {
