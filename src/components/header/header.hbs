@@ -82,6 +82,38 @@
 
       <!-- Иконки действий -->
       <div class="header__actions">
+
+        <!-- Поиск -->
+        <div class="header__search" id="header__search">
+          <div class="header__search-content">
+            <div class="header__search-field">
+              <svg class="header__search-icon" width="100%" height="100%" viewBox="0 0 20 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M19 19L13 13M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z"
+                  stroke="currentColor" stroke-width="1.5" />
+              </svg>
+              <input id="header__search-input" type="text" class="header__search-input" placeholder="Enter query"
+                aria-label="Search query" />
+              <button class="header__search-close" type="button" aria-label="Close search">
+                <svg class="arrow-up-right" width="100%" height="100%" viewBox="0 0 21 22"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19.2266 3.43758L19.9337 2.73047L18.5195 1.31626L17.8124 2.02336L19.2266 3.43758ZM18.5195 2.73047L17.8124 2.02336L0.778051 19.0577L1.48516 19.7648L2.19226 20.4719L19.2266 3.43758L18.5195 2.73047Z" />
+                  <path
+                    d="M13.8047 3.89062L14.8047 3.89063L14.8047 1.89063L13.8047 1.89062L13.8047 3.89062ZM13.8047 2.89062L13.8047 1.89062L1.48263 1.89062L1.48263 2.89062L1.48262 3.89062L13.8047 3.89062L13.8047 2.89062Z" />
+                  <path
+                    d="M17.375 19.9574L17.375 20.9574L19.375 20.9574L19.375 19.9574L17.375 19.9574ZM18.375 7.11914L17.375 7.11914L17.375 19.9574L18.375 19.9574L19.375 19.9574L19.375 7.11914L18.375 7.11914Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Overlay для мобильной версии -->
+          <div class="header__search-overlay"></div>
+        </div>
+
+        <!-- Кнопки -->
         <button class="header__action-btn header__action-btn--phone" aria-label="Call">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -89,6 +121,7 @@
               fill="currentColor" />
           </svg>
         </button>
+
         <button class="header__action-btn header__action-btn--search" aria-label="Search">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -106,6 +139,4 @@
     </div>
   </div>
 
-  <!-- Компонент поиска -->
-  {{> search }}
 </header>

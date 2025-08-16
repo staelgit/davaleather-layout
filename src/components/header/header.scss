@@ -1,24 +1,11 @@
 @use '../../styles/base/vars' as *;
 @use '../../styles/base/mixins' as *;
-@use '../search/search' as *;
 
 .header {
    position: absolute;
    z-index: var(--level-header);
    width: 100%;
-   // isolation: isolate;
 
-   // Позиционирование для поиска
-   .search {
-      @include lg-up {
-         position: absolute;
-         top: 100%;
-         left: 50%;
-         transform: translateX(-50%);
-         width: 324px;
-         margin-top: 6px;
-      }
-   }
 
    .header__container {
       padding-top: 1.875rem;
@@ -170,11 +157,126 @@
 
    }
 
+   .header__search {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: var(--level-modal, 1000);
+
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+
+      width: 100%;
+
+
+      // Десктопная версия - выпадающее поле
+      @include lg-up {
+         position: absolute;
+         top: -50%;
+         right: 0;
+         transform: translateX(-94%);
+         width: 324px;
+         height: 36px;
+      }
+
+      &--active {
+         opacity: 1;
+         visibility: visible;
+      }
+
+      &-overlay {
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background-color: rgba(0, 0, 0, 0.5);
+         z-index: -1;
+
+
+         @include lg-up {
+            display: none;
+         }
+      }
+
+      &-content {
+         padding: 13px 15px;
+         background-color: var(--color-accent);
+
+         @include lg-up {
+            padding: 0;
+            background-color: transparent;
+         }
+      }
+
+      &-field {
+         position: relative;
+         display: flex;
+         align-items: center;
+         border-bottom: 1px solid var(--color-text-white);
+         padding: 8px 0;
+         height: 36px;
+
+         @include lg-up {}
+      }
+
+      &-icon {
+         color: var(--color-text-white);
+         width: 20px;
+         height: 20px;
+
+      }
+
+      &-input {
+         flex: 1;
+         background: none;
+         border: none;
+         outline: none;
+         color: var(--color-text-white);
+         @include desktop-body-3;
+         padding: 0 8px;
+
+         &::placeholder {
+            @include mobile-body-5;
+            color: var(--color-secondary-disabled);
+            opacity: 1;
+            padding-left: 12px;
+         }
+
+         &:focus::placeholder {
+            opacity: 0.7;
+         }
+      }
+
+      &-close {
+         width: 21px;
+         height: 22px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-shrink: 0;
+         transition: color 0.3s ease;
+
+         &:hover {
+            color: var(--color-secondary-disabled);
+         }
+
+         .arrow-up-right {
+            fill: var(--color-text-white);
+         }
+      }
+   }
+
    // Иконки действий
    &__actions {
       display: flex;
       align-items: center;
       gap: 20px;
+      position: relative;
    }
 
    &__action-btn {
@@ -184,16 +286,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: color 0.3s ease;
+
+
+      &--search {
+         @include lg-up {
+            transition: none;
+         }
+      }
 
       &:hover {
          color: var(--color-accent);
+         transition: color 0.3s ease;
       }
 
-      svg {
-         width: 100%;
-         height: 100%;
-      }
 
       &--burger {
          width: 20px;
@@ -334,6 +439,15 @@
             }
          }
 
+      }
+   }
+}
+
+.header__search-open {
+   .header__action-btn--search {
+      @include lg-up {
+         opacity: 0;
+         visibility: hidden;
       }
    }
 }
