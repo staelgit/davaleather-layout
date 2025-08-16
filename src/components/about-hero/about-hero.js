@@ -1,4 +1,4 @@
-import { initSwiper } from '../../js/swiper-init';
+import { initSwiper } from '../../libs/swiper/swiper-init';
 
 // объявляем функцию для инициализации компонента about-hero
 export function initAboutHero() {

@@ -8,9 +8,7 @@
 @use 'base/utility'; // TODO: remove this after implementation
 
 // === Стили внешних библиотек ===
-@use 'swiper-base-styles';
-
-// === Стили страниц ===
+@use '../libs/swiper/swiper-base-styles';
 
 // === Стили компонентов ===
 @use '../components/header/header';
