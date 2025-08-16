@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-US">
+
+{{>head}}
+
+<body>
+
+   {{>header}}
+
+   <main class="main">
+
+      {{> @partial-block }}
+
+      {{>contacts}}
+   </main>
+
+   {{>footer}}
+
+   <script type="module" src="/js/main.js"></script>
+
+   <div class="modals">
+      {{>modal-phone}}
+      {{>modal-zipcode}}
+      {{>modal-form}}
+      {{>modal-success}}
+   </div>
+
+</body>
+
+</html>

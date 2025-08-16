@@ -1,15 +1,1 @@
-<!doctype html>
-<html lang="en-US">
-  {{>head}}
-
-  <body>
-    {{>header}}
-
-    <main class="main">{{>about-hero}}</main>
-
-    {{>contacts}} {{>footer}}
-
-    <script type="module" src="/js/main.js"></script>
-    {{>modal-phone}} {{>modal-zipcode}} {{>modal-form}} {{>modal-success}}
-  </body>
-</html>
+{{#> base-layout }} {{>about-hero}} {{/base-layout}}

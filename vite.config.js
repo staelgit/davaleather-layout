@@ -21,6 +21,7 @@ const partDirs = [
   'src/components/modal-form',
   'src/components/modal-success',
   'src/components/search',
+  'src/layouts',
 ];
 
 const pageData = {
