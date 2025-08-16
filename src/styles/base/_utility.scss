@@ -2,6 +2,7 @@
 a.unimplemented {
    opacity: 0.6;
    position: relative;
+   outline: 1px red dashed;
 }
 
 a.unimplemented::after {
@@ -11,4 +12,10 @@ a.unimplemented::after {
    position: absolute;
    top: 100%;
    left: 0;
+   opacity: 0;
+}
+
+a.unimplemented:hover:after {
+
+   opacity: 1;
 }
