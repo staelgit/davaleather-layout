@@ -10,6 +10,7 @@
       @include container-padding;
     }
   }
+
   &__container {
     outline: 1px dashed red; // TODO: remove this after implementation
 
@@ -50,8 +51,7 @@
     object-fit: cover;
     object-position: center;
 
-    @include lg-up {
-    }
+    @include lg-up {}
   }
 
   &__info {
