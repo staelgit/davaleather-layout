@@ -41,3 +41,11 @@ body {
       // padding: 0 4.375rem;
    }
 }
+
+  .mobile-br {
+    display: inline;
+
+    @include lg-up {
+      display: none;
+    }
+  }

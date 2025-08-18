@@ -1,0 +1,95 @@
+@use '../../styles/base/vars' as *;
+@use '../../styles/base/mixins' as *;
+
+.help-request {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+
+    @include lg-up {
+      @include container-padding;
+    }
+  }
+  &__container {
+    outline: 1px dashed red; // TODO: remove this after implementation
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @include lg-up {
+      padding-top: 11vw;
+      padding-bottom: 11vw;
+    }
+
+    @include xxxl-up {
+      padding-top: 140px;
+      padding-bottom: 140px;
+    }
+  }
+
+  &__content {
+    @include lg-up {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__image-block {
+    height: 250px;
+
+    @include lg-up {
+      max-width: 440px;
+      height: auto;
+      flex: 0 0 34%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @include lg-up {
+    }
+  }
+
+  &__info {
+    @include container-padding;
+
+    @include lg-up {
+      padding-left: 0;
+      padding-right: 0;
+      flex: 0 0 58%;
+      max-width: 750px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    margin-top: 30px;
+    color: var(--color-accent);
+    @include mobile-H2;
+    text-transform: uppercase;
+
+    @include lg-up {
+      margin-top: 0;
+      @include desktop-body-1;
+      width: 95%;
+    }
+
+    @include xxxl-up {
+      width: 88%;
+    }
+  }
+
+  &__btn {
+    margin-top: 20px;
+
+    @include lg-up {
+      margin-top: 10px;
+    }
+  }
+}
