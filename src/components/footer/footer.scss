@@ -2,7 +2,6 @@
 @use '../../styles/base/mixins' as *;
 
 .footer {
-
   .footer__container {
     background: var(--color-primary-background2);
     padding-top: 6.25rem;
@@ -13,7 +12,6 @@
       padding-bottom: 3.125rem;
     }
   }
-
 
   &__main-section {
     display: flex;
@@ -65,7 +63,6 @@
   }
 
   &__nav-services {
-
     @include lg-up {
       flex-basis: 41%;
     }
@@ -76,7 +73,6 @@
   }
 
   &__legal-section {
-
     @include mobile-body-4;
     color: var(--color-text-black);
     height: 2.875rem;
@@ -93,7 +89,6 @@
       margin-top: 4.375rem;
       @include desktop-body-3;
     }
-
   }
 
   &__legal-menu {
@@ -103,19 +98,15 @@
     @include lg-up {
       gap: 4.375rem;
     }
-
   }
 
   &__main-menu-item,
   &__services-menu-item,
   &__legal-menu-item {
     a {
-
-      &:hover,
-      &:focus {
+      &:hover {
         color: var(--color-accent);
       }
     }
   }
-
 }

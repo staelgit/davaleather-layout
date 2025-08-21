@@ -2,97 +2,123 @@
 @use '../../styles/base/mixins' as *;
 
 .contacts {
+  .contacts__container {
+    padding: 0;
+  }
 
-   .contacts__container {
-      @include mobile-body-3;
-      background: var(--color-accent);
-      display: flex;
-      flex-direction: column;
-      padding: 0;
+  &__content {
+    display: flex;
+    flex-direction: column;
 
-      @include lg-up {
-         @include desktop-body-3;
-         flex-direction: row;
-         justify-content: space-between;
-         align-items: center;
-         @include container-padding-left;
-      }
-   }
+    @include lg-up {
+      flex-direction: row;
+      justify-content: space-between;
+      // align-items: center;
+    }
+  }
 
-   &__info {
-      height: 388px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 max(1rem, $safe-area-mobile); // Защита от "ушей" iPhone
+  &__info {
+    @include mobile-body-3;
+    height: 388px;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 max(1rem, $safe-area-mobile); // Защита от "ушей" iPhone
+    background: var(--color-accent);
 
-      @include lg-up {
-         height: auto;
-         padding: 0 1rem 0 0;
-      }
-   }
+    @include lg-up {
+      @include desktop-body-3;
+      height: auto;
+      @include container-padding-left;
+      // padding: 0 1rem 0 0;
+    }
+  }
 
-   &__label {
-      font-weight: 700;
-      text-transform: uppercase;
-   }
+  &__label {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 
-   &__support {
-      margin-top: 1rem;
-   }
+  &__support {
+    margin-top: 1rem;
+  }
 
+  &__communication {
+    margin-top: 1.25rem;
+  }
 
-   &__communication {
-      margin-top: 1.25rem;
-   }
+  &__support,
+  &__communication {
+    > :nth-child(n + 2) {
+      // все дочерние элементы, кроме первого
+      margin-top: 0.1875rem;
+    }
+  }
 
-   &__support,
-   &__communication {
-      > :nth-child(n+2) {
-         // все дочерние элементы, кроме первого
-         margin-top: 0.1875rem;
-      }
-   }
+  &__socials {
+    height: 1.375rem;
+    display: flex;
+    align-items: center;
+  }
 
-   &__socials {
-      height: 1.375rem;
-      display: flex;
-      align-items: center;
+  &__social {
+    &--facebook {
+      // Можно добавить иконку через before
+    }
 
-   }
+    &--instagram {
+      // Можно добавить иконку через before
+    }
+  }
 
-   &__social {
+  &__social-separator {
+    display: inline-block;
+    width: 1px;
+    height: 1.375rem;
+    margin: 0 0.4375rem;
+    background: var(--color-text-black);
+  }
 
+  &__image {
+    flex: 0 1 67.9%;
+    max-width: 930px;
 
-      &--facebook {
-         // Можно добавить иконку через before
-      }
+    img {
+      width: 100%;
+      height: 100%;
+      // object-fit: cover;
+    }
+  }
 
-      &--instagram {
-         // Можно добавить иконку через before
-      }
-   }
+  /* Animation Classes */
+  &__highlight {
+    animation: highlight-contacts 2s ease;
+    transition: all 0.3s;
+    z-index: 10;
+  }
 
-   &__social-separator {
-      display: inline-block;
-      width: 1px;
-      height: 1.375rem;
-      margin: 0 0.4375rem;
-      background: var(--color-text-black);
-   }
-
-
-
-
-   &__image {
-      flex: 0 1 67.9%;
-      max-width: 930px;
-
-      img {
-         width: 100%;
-         height: 100%;
-         // object-fit: cover;
-      }
-   }
-
+  @keyframes highlight-contacts {
+    0% {
+      box-shadow:
+        0 0 0 0 rgba(255, 255, 0, 0.6) inset,
+        0 0 0 0 #fff;
+      outline: 2px solid rgba(255, 221, 51, 0);
+      background-color: var(--color-accent);
+    }
+    10% {
+      box-shadow: 0 0 32px 6px rgba(255, 255, 0, 0.5) inset;
+      outline: 2px solid rgba(255, 221, 51, 0.65);
+    }
+    90% {
+      box-shadow: 0 0 32px 6px rgba(255, 255, 0, 0.5) inset;
+      outline: 2px solid rgba(255, 221, 51, 0.65);
+      background-color: #e5731a;
+    }
+    100% {
+      box-shadow: none;
+      outline: 2px solid rgba(255, 221, 51, 0);
+      background-color: var(--color-accent);
+    }
+  }
 }

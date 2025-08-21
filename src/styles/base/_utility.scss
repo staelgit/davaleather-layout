@@ -1,21 +1,24 @@
 // TODO: remove this after implementation
 a.unimplemented {
-   opacity: 0.6;
-   position: relative;
-   outline: 1px red dashed;
+  opacity: 0.6;
+  position: relative;
+  outline: 1px red dashed;
 }
 
 a.unimplemented::after {
-   content: " (TODO)";
-   color: red;
-   font-size: 0.8em;
-   position: absolute;
-   top: 100%;
-   left: 0;
-   opacity: 0;
+  content: ' (TODO)';
+  color: red;
+  font-size: 0.8em;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 0;
 }
 
 a.unimplemented:hover:after {
+  opacity: 1;
+}
 
-   opacity: 1;
+.hidden {
+  display: none !important;
 }
