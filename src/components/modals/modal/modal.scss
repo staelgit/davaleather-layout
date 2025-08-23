@@ -1,0 +1,106 @@
+@use '../../../styles/base/vars' as *;
+@use '../../../styles/base/mixins' as *;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--level-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+
+    .modal__container {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
+
+.modal__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.modal__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal__content {
+  position: relative;
+  background: var(--color-primary-background2);
+  width: calc(100vw - 2 * var(--mobile-container-padding));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+
+  @include lg-up {
+    width: 382px;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+.modal__close-icon {
+  color: var(--color-secondary-gray);
+  width: 12px;
+  height: 12px;
+}
+
+// Стили для контента будут в конкретных модальных окнах
+
+.modal__body {
+  min-height: 304px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  max-height: 80vh;
+}
+
+// Дополнительные стили для body при открытом модальном окне (если нужны)
+// overflow и padding-right управляются JavaScript
+// Здесь можно добавить дополнительные стили при необходимости
+
+// body.modal-open {}

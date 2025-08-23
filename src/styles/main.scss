@@ -19,9 +19,9 @@
 @use '../components/reviews/reviews';
 @use '../components/contacts/contacts';
 @use '../components/footer/footer';
-@use '../components/modal/modal';
-@use '../components/modal-phone/modal-phone';
-@use '../components/modal-zipcode/modal-zipcode';
-@use '../components/modal-form/modal-form';
-@use '../components/modal-success/modal-success';
+@use '../components/modals/modal/modal';
+@use '../components/modals/modal-phone/modal-phone';
+@use '../components/modals/modal-zipcode/modal-zipcode';
+@use '../components/modals/modal-form/modal-form';
+@use '../components/modals/modal-success/modal-success';
 @use '../components/help-request/help-request';
