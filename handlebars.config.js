@@ -6,7 +6,8 @@ export const partDirs = [
   'src/components/head',
   'src/components/placeholder',
   'src/components/main-hero',
-  'src/components/cta-button',
+  'src/components/UI/cta-button',
+  'src/components/UI/slider-nav',
   'src/components/modal',
   'src/components/modal-phone',
   'src/components/modal-zipcode',
@@ -14,6 +15,7 @@ export const partDirs = [
   'src/components/modal-success',
   'src/components/search',
   'src/components/help-request',
+  'src/components/reviews',
   'src/layouts',
 ];
 

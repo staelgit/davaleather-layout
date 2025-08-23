@@ -12,18 +12,18 @@
   }
 
   &__container {
-    outline: 1px dashed red; // TODO: remove this after implementation
+    // outline: 1px dashed red; // TODO: remove this after implementation
 
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 100px;
 
     @include lg-up {
-      padding-top: 11vw;
+      padding-top: 6.5vw;
       padding-bottom: 11vw;
     }
 
     @include xxxl-up {
-      padding-top: 140px;
+      padding-top: 70px;
       padding-bottom: 140px;
     }
   }
@@ -50,8 +50,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-
-    @include lg-up {}
   }
 
   &__info {

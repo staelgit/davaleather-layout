@@ -9,6 +9,7 @@ import { initZipcodeModal } from '../components/modal-zipcode/modal-zipcode.js';
 import { initFormModal } from '../components/modal-form/modal-form.js';
 import { initSuccessModal } from '../components/modal-success/modal-success.js';
 import { initHelpRequest } from '../components/help-request/help-request.js';
+import { initReviews } from '../components/reviews/reviews.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('initMain');
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initAboutHero();
   initMainHero();
+  initReviews();
   initHelpRequest();
   initContacts();
   initFooter();

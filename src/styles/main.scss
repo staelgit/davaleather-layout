@@ -12,9 +12,11 @@
 
 // === Стили компонентов ===
 @use '../components/header/header';
-@use '../components/cta-button/cta-button';
+@use '../components/UI/cta-button/cta-button';
+@use '../components/UI/slider-nav/slider-nav';
 @use '../components/about-hero/about-hero';
 @use '../components/main-hero/main-hero';
+@use '../components/reviews/reviews';
 @use '../components/contacts/contacts';
 @use '../components/footer/footer';
 @use '../components/modal/modal';

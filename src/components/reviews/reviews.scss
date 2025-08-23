@@ -1,0 +1,169 @@
+@use '../../styles/base/vars' as *;
+@use '../../styles/base/mixins' as *;
+
+.reviews {
+  color: var(--color-text-white);
+  min-height: 1px;
+
+  &__container {
+    // outline: 1px dashed lightblue; // TODO: remove this after implementation
+
+    padding-top: 100px;
+    padding-bottom: 50px;
+
+    @include lg-up {
+      padding-top: 11vw;
+      padding-bottom: 6.5vw;
+    }
+
+    @include xxxl-up {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+  }
+
+  &__header {
+    color: var(--color-accent);
+
+    &-line {
+      @include lg-up {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__subtitle {
+    @include mobile-H4;
+
+    @include lg-up {
+      @include desktop-H5;
+    }
+  }
+
+  &__title {
+    @include mobile-H1;
+    text-transform: uppercase;
+
+    @include lg-up {
+      @include desktop-H2;
+    }
+  }
+
+  &__tabs {
+    margin-top: 20px;
+    width: 156px;
+    height: 44px;
+    border: 1px solid var(--color-accent);
+
+    display: flex;
+
+    @include lg-up {
+      margin-top: 2.3vw;
+      height: 33px;
+    }
+
+    @include xxxl-up {
+      margin-right: 30px;
+    }
+
+    &-description {
+      margin-top: 30px;
+      width: 285px;
+      @include mobile-body-3;
+
+      @include lg-up {
+        margin-top: 2.3vw;
+        margin-right: 25px;
+        width: auto;
+        @include desktop-body-3;
+      }
+    }
+
+    &-block {
+      width: 100%;
+
+      @include lg-up {
+        width: 310px;
+      }
+    }
+  }
+
+  &__tab {
+    flex: 2 1 auto;
+    text-align: center;
+    text-transform: uppercase;
+
+    transition: all 0.3s;
+
+    &--active {
+      background-color: var(--color-accent);
+      cursor: default;
+    }
+  }
+
+  &__nav {
+    height: 100%;
+  }
+
+  &__slider {
+    overflow: hidden;
+    margin-top: 50px;
+
+    @include lg-up {
+      margin-top: 3.9vw;
+    }
+
+    @include xxxl-up {
+      margin-top: 50px;
+    }
+
+    &-wrapper {
+      margin-top: 30px;
+
+      @include lg-up {
+        margin-top: 2.3vw;
+      }
+
+      @include xxxl-up {
+        margin-top: 30px;
+      }
+    }
+  }
+  &__item {
+    &-text {
+      margin-top: 20px;
+      @include mobile-body-3;
+
+      @include lg-up {
+        @include desktop-body-3;
+      }
+    }
+  }
+
+  &__author {
+    margin-top: 30px;
+
+    @include lg-up {
+      margin-top: 26px;
+    }
+  }
+
+  &__date {
+    margin-left: 6px;
+  }
+
+  &__link {
+    text-decoration: underline;
+    @include mobile-body-4;
+
+    transition: color 0.3s;
+
+    @include lg-up {
+      @include desktop-body-4;
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+}
