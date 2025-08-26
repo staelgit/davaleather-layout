@@ -8,7 +8,7 @@
   &__container {
     // outline: 1px dashed lightblue; // TODO: remove this after implementation
 
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 50px;
 
     @include lg-up {
@@ -43,6 +43,7 @@
 
   &__title {
     @include mobile-H1;
+
     text-transform: uppercase;
 
     @include lg-up {
@@ -55,7 +56,6 @@
     width: 156px;
     height: 44px;
     border: 1px solid var(--color-accent);
-
     display: flex;
 
     @include lg-up {
@@ -93,7 +93,6 @@
     flex: 2 1 auto;
     text-align: center;
     text-transform: uppercase;
-
     transition: all 0.3s;
 
     &--active {
@@ -130,6 +129,7 @@
       }
     }
   }
+
   &__item {
     &-text {
       margin-top: 20px;
@@ -161,6 +161,7 @@
 
     @include lg-up {
       @include desktop-body-4;
+
       &:hover {
         color: var(--color-accent);
       }

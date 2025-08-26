@@ -1,0 +1,47 @@
+@use '../../../styles/base/vars' as *;
+@use '../../../styles/base/mixins' as *;
+
+.section-header {
+  @include lg-up {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__subtitle {
+    @include mobile-H4;
+
+    @include lg-up {
+      @include desktop-H5;
+    }
+  }
+
+  &__title {
+    @include mobile-H1;
+
+    text-transform: uppercase;
+    position: relative;
+    display: inline;
+    padding-right: 20px;
+
+    @include lg-up {
+      @include desktop-H2;
+    }
+
+    &-block {
+      color: var(--color-accent);
+    }
+  }
+
+  &__description {
+    color: var(--color-text-white);
+    margin-top: 10px;
+    width: 285px;
+    @include mobile-body-3;
+
+    @include lg-up {
+      margin-top: 2.3vw;
+      margin-right: 25px;
+      @include desktop-body-3;
+    }
+  }
+}

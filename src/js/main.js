@@ -10,6 +10,7 @@ import { initFormModal } from '../components/modals/modal-form/modal-form.js';
 import { initSuccessModal } from '../components/modals/modal-success/modal-success.js';
 import { initHelpRequest } from '../components/help-request/help-request.js';
 import { initReviews } from '../components/reviews/reviews.js';
+import { initClientService } from '../components/client-service/client-service.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('initMain');
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMainHero();
   initReviews();
   initHelpRequest();
+  initClientService();
   initContacts();
   initFooter();
 });

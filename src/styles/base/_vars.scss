@@ -1,17 +1,17 @@
 // _vars.scss
-// CSS-переменные для глобальных стилей 
+// CSS-переменные для глобальных стилей
 :root {
-  --color-background-body: #282B2D;
-  --color-accent: #C75528;
+  --color-background-body: #282b2d;
+  --color-accent: #c75528;
   --color-primary-background1: #323232;
-  --color-primary-background2: #F0F0F0;
-  --color-secondary-error: #E8D1C8;
-  --color-secondary-disabled: #B0B0B0;
+  --color-primary-background2: #f0f0f0;
+  --color-secondary-error: #e8d1c8;
+  --color-secondary-disabled: #b0b0b0;
   --color-secondary-gray: #949494;
-  --color-text-white: #FFFFFF;
-  --color-text-black: #222222;
-  --font-accent: 'Random Grotesque Std', Arial, sans-serif;
-  --font-base: 'Roboto', Arial, sans-serif;
+  --color-text-white: #fff;
+  --color-text-black: #222;
+  --font-accent: 'Random Grotesque Std', arial, sans-serif;
+  --font-base: 'Roboto', arial, sans-serif;
   --container-padding: clamp(16px, 4.5vw, 70px);
   --mobile-container-padding: 15px;
   --level-nav: -1;
@@ -20,14 +20,12 @@
   --level-modal: 1000;
   --level-toast: 2000;
   --level-loader: 3000;
-  --level-errorModal: 4000;
-
-
+  --level-error-modal: 4000;
 }
 
 // --- Адаптив ---
 // Минимальные отступы безопасности (safe area) для современных устройств
-$safe-area-mobile: env(safe-area-inset-left, 16px); // Для iPhone X+ 
+$safe-area-mobile: env(safe-area-inset-left, 16px); // Для iPhone X+
 
 // Брейкпоинты (адаптация под 95% устройств)
 $mobile-sm: 360px; // Маленькие телефоны (Galaxy Fold, iPhone SE)
