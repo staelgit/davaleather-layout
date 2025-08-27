@@ -6,8 +6,6 @@
   min-height: 1px;
 
   &__container {
-    // outline: 1px dashed lightblue; // TODO: remove this after implementation
-
     padding-top: 50px;
     padding-bottom: 50px;
 
@@ -24,47 +22,21 @@
 
   &__header {
     color: var(--color-accent);
-
-    &-line {
-      @include lg-up {
-        display: flex;
-        justify-content: space-between;
-      }
-    }
   }
 
-  &__subtitle {
-    @include mobile-H4;
-
-    @include lg-up {
-      @include desktop-H5;
-    }
-  }
-
-  &__title {
-    @include mobile-H1;
-
-    text-transform: uppercase;
-
-    @include lg-up {
-      @include desktop-H2;
-    }
+  &__body {
+    margin-top: 20px;
   }
 
   &__tabs {
-    margin-top: 20px;
     width: 156px;
     height: 44px;
     border: 1px solid var(--color-accent);
     display: flex;
+    margin-right: 154px;
 
     @include lg-up {
-      margin-top: 2.3vw;
       height: 33px;
-    }
-
-    @include xxxl-up {
-      margin-right: 30px;
     }
 
     &-description {
@@ -84,7 +56,8 @@
       width: 100%;
 
       @include lg-up {
-        width: 310px;
+        display: flex;
+        justify-content: flex-end;
       }
     }
   }
@@ -155,9 +128,8 @@
 
   &__link {
     text-decoration: underline;
-    @include mobile-body-4;
-
     transition: color 0.3s;
+    @include mobile-body-4;
 
     @include lg-up {
       @include desktop-body-4;
