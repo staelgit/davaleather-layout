@@ -18,8 +18,8 @@
     padding-bottom: 100px;
 
     @include lg-up {
-      padding-top: 6.5vw;
-      padding-bottom: 11vw;
+      padding-top: 5.4vw;
+      padding-bottom: 10.8vw;
     }
 
     @include xxxl-up {
@@ -70,11 +70,13 @@
     margin-top: 30px;
     color: var(--color-accent);
     @include mobile-H2;
+
     text-transform: uppercase;
 
     @include lg-up {
       margin-top: 0;
       @include desktop-body-1;
+
       width: 95%;
     }
 
