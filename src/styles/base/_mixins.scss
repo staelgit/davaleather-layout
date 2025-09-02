@@ -1,7 +1,9 @@
+/* stylelint-disable scss/at-mixin-pattern */
 // _mixins.scss
+
 @use 'vars' as *;
 
-// Миксины для переиспользуемых стилей 
+// Миксины для пере используемых стилей
 @mixin center-content {
   display: flex;
   justify-content: center;
@@ -18,13 +20,14 @@
   padding-left: var(--container-padding);
 }
 
-// Типографика
-//body
-// font-size: 16px;
-// line-height: 1.2;
-// font-weight: 400;
-// font-family: var(--font-base);
-
+/* 
+Типографика
+body
+font-size: 16px;
+line-height: 1.2;
+font-weight: 400;
+font-family: var(--font-base); 
+*/
 
 // desktop
 @mixin desktop-H1 {
@@ -150,8 +153,7 @@
 }
 
 @mixin mobile-body-3-medium {
-  font-weight: 500;
-  // 16px
+  font-weight: 500; // 16px
   line-height: 1.3;
 }
 
@@ -170,8 +172,6 @@
   font-size: 0.75rem; // 12px
   line-height: 1.3;
 }
-
-
 
 // Миксины для медиа-запросов, Mobile First (min-width)
 // 360px+

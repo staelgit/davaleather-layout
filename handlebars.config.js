@@ -18,6 +18,7 @@ export const partDirs = [
   'src/components/help-request',
   'src/components/reviews',
   'src/components/client-service',
+  'src/components/services',
   'src/layouts',
 ];
 

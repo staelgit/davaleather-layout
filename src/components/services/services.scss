@@ -1,0 +1,117 @@
+@use '../../styles/base/vars' as *;
+@use '../../styles/base/mixins' as *;
+
+.services {
+  &__container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+
+    @include lg-up {
+      padding-top: 10.8vw;
+      padding-bottom: 5.4vw;
+    }
+
+    @include xxxl-up {
+      padding-top: 140px;
+      padding-bottom: 70px;
+    }
+  }
+
+  // no specific header styles; uses section-header partial
+
+  &__grid {
+    margin-top: 3.8vw;
+
+    @include lg-up {
+      margin-top: 5.4vw;
+    }
+  }
+
+  &__card {
+    padding: 25px var(--mobile-container-padding) 10px;
+    margin: 0 calc(-1 * var(--mobile-container-padding));
+    border-bottom: 1px solid var(--color-accent);
+
+    @include lg-up {
+      padding: 1.25rem 0;
+      margin: 0;
+    }
+
+    &-content {
+      @include lg-up {
+        display: flex;
+        gap: 1.25rem;
+      }
+    }
+  }
+
+  &__image {
+    height: 206px;
+    overflow: hidden;
+
+    @include lg-up {
+      max-height: 206px; // как в макете
+      height: 15.85%; // как в макете
+      width: 49.24%;
+      max-width: 640px;
+      order: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s ease;
+    }
+  }
+
+  &__card-header {
+    color: var(--color-text-white);
+    margin-top: 30px;
+
+    @include lg-up {
+      width: 49.24%;
+      max-width: 640px;
+      margin-top: 1.25rem;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    @include mobile-H3;
+
+    @include lg-up {
+      @include desktop-H4;
+    }
+  }
+
+  &__text {
+    @include mobile-body-3;
+
+    margin-top: 10px;
+    transition: all 0.3s ease;
+
+    @include lg-up {
+      @include desktop-body-3;
+
+      width: 66.41%;
+      max-width: 425px;
+      margin-top: 1rem;
+    }
+  }
+
+  &__card:hover {
+    // cursor: pointer;
+
+    .services__card-header {
+      color: var(--color-accent);
+    }
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+}

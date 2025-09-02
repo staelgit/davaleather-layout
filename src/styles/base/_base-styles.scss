@@ -3,49 +3,49 @@
 
 // Основные стили
 html {
-   font-size: 16px;
+  font-size: 16px;
 
-   @include lg-up {
-      font-size: 12px;
-   }
+  @include lg-up {
+    font-size: 12px;
+  }
 
-   @include xl-up {
-      font-size: 13px;
-   }
+  @include xl-up {
+    font-size: 13px;
+  }
 
-   @include xxl-up {
-      font-size: 16px;
-   }
+  @include xxl-up {
+    font-size: 16px;
+  }
 }
 
 body {
-   background-color: var(--color-background-body);
-   color: var(--color-text-black);
-   font-family: var(--font-base);
-   font-weight: 400;
-   line-height: 1.2;
+  background-color: var(--color-background-body);
+  color: var(--color-text-black);
+  font-family: var(--font-base);
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 .container {
-   background-color: var(--color-primary-background1);
-   width: 100%;
-   max-width: 100%;
-   padding: 0 var(--mobile-container-padding);
+  background-color: var(--color-primary-background1);
+  width: 100%;
+  max-width: 100%;
+  padding: 0 var(--mobile-container-padding);
 
-   // Desktop
-   // 768px+
-   @include lg-up {
-      @include container-padding;
-      margin: 0 auto;
-      max-width: 1440px;
-      // padding: 0 4.375rem;
-   }
+  // Desktop
+  // 768px+
+  @include lg-up {
+    @include container-padding;
+
+    margin: 0 auto;
+    max-width: 1440px;
+  }
 }
 
-  .mobile-br {
-    display: inline;
+.mobile-br {
+  display: inline;
 
-    @include lg-up {
-      display: none;
-    }
+  @include lg-up {
+    display: none;
   }
+}
