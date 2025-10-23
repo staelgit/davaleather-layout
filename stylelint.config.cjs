@@ -10,5 +10,8 @@ module.exports = {
         message: 'Expected class selector to be kebab-case or BEM notation',
       },
     ],
+    'color-function-notation': 'legacy',
+    'color-function-alias-notation': 'with-alpha',
+    'alpha-value-notation': null,
   },
 };
