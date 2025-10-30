@@ -2,9 +2,10 @@ export const partDirs = [
   'src/components/header',
   'src/components/footer',
   'src/components/contacts',
-  'src/components/about-hero',
-  'src/components/head',
   'src/components/placeholder',
+  'src/components/about-hero',
+  'src/components/residential-hero',
+  'src/components/head',
   'src/components/main-hero',
   'src/components/UI/cta-button',
   'src/components/UI/slider-nav',
@@ -47,6 +48,7 @@ export const pageData = {
       residential: true,
       services: true,
     },
+    isNavElementsBlack: true,
   },
   '/pages/commercial/index.html': {
     title: 'Commercial Furniture Repair - Dava Leather',
@@ -54,6 +56,7 @@ export const pageData = {
       commercial: true,
       services: true,
     },
+    isNavElementsBlack: true,
   },
   '/pages/automotive/index.html': {
     title: 'Automotive Interior Restoration - Dava Leather',
@@ -61,6 +64,7 @@ export const pageData = {
       automotive: true,
       services: true,
     },
+    isNavElementsBlack: true,
   },
   '/pages/cleaning/index.html': {
     title: 'Leather Cleaning & Protecting - Dava Leather',

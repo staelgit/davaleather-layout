@@ -25,7 +25,13 @@
 
    }
 
+
    &__logo-icon {
+      &-main-text {
+         fill: var(--color-text-white);
+         transition: fill 0.3s ease;
+      }
+
       &-elements {
          fill: var(--color-accent);
          transition: fill 0.3s ease;
@@ -315,11 +321,35 @@
       background-color: var(--color-text-white);
       transition: all 0.3s ease;
    }
+
+   &__nav-elements--black {
+      .header__logo-icon-main-text {
+         fill: var(--color-text-black);
+         transition: fill 0.3s ease;
+
+         @include lg-up {
+            fill: var(--color-text-white);
+         }
+      }
+
+      .header__action-btn {
+         color: var(--color-text-black);
+         transition: color 0.3s ease;
+      }
+
+      .header__burger-line {
+         background-color: var(--color-text-black);
+      }
+   }
 }
 
 // Состояния для мобильного меню
 .header--mobile-menu-open {
    .header__logo-icon {
+      &-main-text {
+         fill: var(--color-text-white);
+      }
+
       &-elements {
          fill: var(--color-text-white);
       }
@@ -329,7 +359,13 @@
       }
    }
 
+   .header__action-btn {
+      color: var(--color-text-white);
+   }
+
    .header__burger-line {
+      background-color: var(--color-text-white);
+
       &:nth-child(1) {
          transform: translateY(8px) rotate(45deg);
       }
