@@ -15,8 +15,7 @@
 
    &__header {
       display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
+      flex-flow: column wrap;
 
       @include lg-up {
          flex-direction: row;
@@ -28,10 +27,8 @@
 
       @include lg-up {
          flex: 1 1 100%;
-
          font-size: 0.875rem;
          color: #949494;
-
          display: flex;
          align-items: center;
          gap: 0.5rem;
@@ -56,28 +53,31 @@
          }
       }
 
-
    }
 
    &__title {
       @include mobile-H1;
+
       text-transform: uppercase;
       color: var(--color-accent);
       margin-top: 0.625rem;
 
       @include lg-up {
          @include desktop-H1;
+
          flex: 1 1 100%;
       }
    }
 
    &__subtitle {
       @include mobile-body-2-uppercase-medium;
+
       margin-top: 1.875rem;
       color: var(--color-text-white);
 
       @include lg-up {
          @include desktop-H4;
+
          width: 50%;
       }
 
@@ -110,8 +110,7 @@
 
       @include lg-up {
          display: flex;
-         flex-direction: row;
-         flex-wrap: wrap;
+         flex-flow: row wrap;
          gap: 1.25rem;
       }
    }
@@ -124,16 +123,17 @@
       justify-content: space-between;
       background: var(--color-primary-background2);
       color: var(--color-text-black);
-
       flex: 1 1 calc((100% / 4) - 1.25rem);
 
       &-title {
          @include desktop-H4;
+
          text-transform: uppercase;
       }
 
       &-text {
          @include desktop-body-3;
+
          margin-top: 1.5rem;
       }
 
@@ -173,8 +173,6 @@
 
       }
 
-
-
       &-wrapper {
          margin-top: 1.875rem;
       }
@@ -193,9 +191,3 @@
    }
 
 }
-
-// .arrow-icon {
-//    fill: var(--color-text-white);
-//    width: 260px;
-//    height: 300px;
-// }

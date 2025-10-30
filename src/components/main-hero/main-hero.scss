@@ -2,7 +2,6 @@
 @use '../../styles/base/mixins' as *;
 
 .main-hero {
-
    .main-hero__container {
       position: relative;
       padding: 0;
@@ -50,6 +49,7 @@
 
    &__title {
       @include mobile-H2;
+
       text-transform: uppercase;
 
       @include lg-up {
@@ -59,6 +59,7 @@
 
       @include xxxl-up {
          @include desktop-H1;
+
          width: 60%;
       }
    }
@@ -109,11 +110,13 @@
 
    &__cta-text {
       @include mobile-body-2;
+
       margin-left: 45%;
       margin-bottom: 1.875rem;
 
       @include lg-up {
          @include desktop-body-2;
+
          margin-left: 0;
          margin-bottom: 1.25rem;
       }

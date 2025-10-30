@@ -15,7 +15,7 @@ a.unimplemented::after {
   opacity: 0;
 }
 
-a.unimplemented:hover:after {
+a.unimplemented:hover::after {
   opacity: 1;
 }
 

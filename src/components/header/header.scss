@@ -37,84 +37,6 @@
       }
    }
 
-
-   // Навигация
-   &__nav {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100vh;
-      background-color: var(--color-accent);
-      padding: 102px 15px 15px;
-      transition: left 0.3s ease;
-      z-index: var(--level-nav);
-
-
-      @include lg-up {
-         display: block;
-         position: static;
-         width: auto;
-         height: auto;
-         background-color: transparent;
-         padding: 0;
-         z-index: auto;
-      }
-
-      &-list {
-         display: flex;
-         align-items: center;
-         gap: 30px;
-      }
-
-      &-item {
-         position: relative;
-         margin-right: 1px;
-
-         &--has-dropdown {
-            &.header__nav-item--expanded .header__dropdown {
-
-               opacity: 1;
-               visibility: visible;
-               // transform: translateY(0);
-
-            }
-         }
-      }
-
-      &-link {
-         color: var(--color-text-white);
-         @include desktop-body-3;
-
-         &:hover {
-            color: var(--color-accent);
-            transition: color 0.3s ease;
-
-         }
-
-         &--dropdown-trigger {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-         }
-
-         &--active {
-            color: var(--color-accent);
-         }
-      }
-
-      &-arrow {
-         transition: transform 0.3s ease;
-         width: 8px;
-         height: 5px;
-
-      }
-
-      &-item--has-dropdown.header__nav-item--expanded &-arrow {
-         transform: rotate(180deg);
-      }
-   }
-
    // Выпадающее меню Services
    &__dropdown {
       position: absolute;
@@ -157,18 +79,89 @@
 
    }
 
-   .header__search {
+   // Навигация
+   &__nav {
       position: fixed;
       top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: var(--level-modal, 1000);
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--color-accent);
+      padding: 102px 15px 15px;
+      transition: left 0.3s ease;
+      z-index: var(--level-nav);
 
+      @include lg-up {
+         display: block;
+         position: static;
+         width: auto;
+         height: auto;
+         background-color: transparent;
+         padding: 0;
+         z-index: auto;
+      }
+
+      &-list {
+         display: flex;
+         align-items: center;
+         gap: 30px;
+      }
+
+      &-item {
+         position: relative;
+         margin-right: 1px;
+
+         &--has-dropdown {
+            &.header__nav-item--expanded .header__dropdown {
+               opacity: 1;
+               visibility: visible;
+
+            }
+         }
+      }
+
+      &-link {
+         color: var(--color-text-white);
+         @include desktop-body-3;
+
+         &:hover {
+            color: var(--color-accent);
+            transition: color 0.3s ease;
+
+         }
+
+         &--dropdown-trigger {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+         }
+
+         &--active {
+            color: var(--color-accent);
+         }
+      }
+
+      &-arrow {
+         transition: transform 0.3s ease;
+         width: 8px;
+         height: 5px;
+
+      }
+
+      &-item--has-dropdown.header__nav-item--expanded &-arrow {
+         transform: rotate(180deg);
+      }
+   }
+
+
+
+   .header__search {
+      position: fixed;
+      inset: 0;
+      z-index: var(--level-modal, 1000);
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
-
       width: 100%;
 
 
@@ -190,10 +183,7 @@
       &-overlay {
          display: block;
          position: absolute;
-         top: 0;
-         left: 0;
-         right: 0;
-         bottom: 0;
+         inset: 0;
          background-color: rgba(0, 0, 0, 0.5);
          z-index: -1;
 
@@ -221,7 +211,6 @@
          padding: 8px 0;
          height: 36px;
 
-         @include lg-up {}
       }
 
       &-icon {
@@ -238,10 +227,12 @@
          outline: none;
          color: var(--color-text-white);
          @include desktop-body-3;
+
          padding: 0 8px;
 
          &::placeholder {
             @include mobile-body-5;
+
             color: var(--color-secondary-disabled);
             opacity: 1;
             padding-left: 12px;
@@ -328,8 +319,6 @@
 
 // Состояния для мобильного меню
 .header--mobile-menu-open {
-
-
    .header__logo-icon {
       &-elements {
          fill: var(--color-text-white);
@@ -361,8 +350,7 @@
       }
 
       // На мобильных показываем как полноэкранное меню
-      @media (max-width: 767px) {
-
+      @media (width <=767px) {
          left: 0;
 
 
@@ -377,6 +365,7 @@
 
          .header__nav-link {
             @include mobile-H1;
+
             color: var(--color-text-black);
             text-transform: uppercase;
          }
@@ -391,21 +380,6 @@
             height: 10px;
             margin-top: 3px;
             transition: transform 0.3s ease;
-         }
-
-         .header__nav-item--has-dropdown.header__nav-item--expanded {
-            .header__nav-link {
-               color: var(--color-text-white);
-            }
-
-            .header__nav-arrow {
-               transform: rotate(180deg);
-            }
-
-            // Показываем выпадающее меню только когда развернуто
-            .header__dropdown {
-               display: block;
-            }
          }
 
          // Подменю для мобильных
@@ -425,6 +399,7 @@
 
             .header__dropdown-link {
                @include mobile-body-2;
+
                color: var(--color-text-white);
                padding: 0;
 
@@ -438,6 +413,23 @@
                }
             }
          }
+
+         .header__nav-item--has-dropdown.header__nav-item--expanded {
+            .header__nav-link {
+               color: var(--color-text-white);
+            }
+
+            .header__nav-arrow {
+               transform: rotate(180deg);
+            }
+
+            // Показываем выпадающее меню только когда развернуто
+            .header__dropdown {
+               display: block;
+            }
+         }
+
+
 
       }
    }

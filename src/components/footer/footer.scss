@@ -74,6 +74,7 @@
 
   &__legal-section {
     @include mobile-body-4;
+
     color: var(--color-text-black);
     height: 2.875rem;
     display: flex;

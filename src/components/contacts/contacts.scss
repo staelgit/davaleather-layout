@@ -13,12 +13,12 @@
     @include lg-up {
       flex-direction: row;
       justify-content: space-between;
-      // align-items: center;
     }
   }
 
   &__info {
     @include mobile-body-3;
+
     height: 388px;
     display: flex;
     flex: 1 1 auto;
@@ -29,9 +29,9 @@
 
     @include lg-up {
       @include desktop-body-3;
-      height: auto;
       @include container-padding-left;
-      // padding: 0 1rem 0 0;
+
+      height: auto;
     }
   }
 
@@ -66,6 +66,7 @@
     &:hover {
       font-weight: 500;
     }
+
     &--facebook {
       width: 4.375rem;
     }
@@ -90,7 +91,6 @@
     img {
       width: 100%;
       height: 100%;
-      // object-fit: cover;
     }
   }
 
@@ -109,15 +109,18 @@
       outline: 2px solid rgba(255, 221, 51, 0);
       background-color: var(--color-accent);
     }
+
     10% {
       box-shadow: 0 0 32px 6px rgba(255, 255, 0, 0.5) inset;
       outline: 2px solid rgba(255, 221, 51, 0.65);
     }
+
     90% {
       box-shadow: 0 0 32px 6px rgba(255, 255, 0, 0.5) inset;
       outline: 2px solid rgba(255, 221, 51, 0.65);
       background-color: #e5731a;
     }
+
     100% {
       box-shadow: none;
       outline: 2px solid rgba(255, 221, 51, 0);
