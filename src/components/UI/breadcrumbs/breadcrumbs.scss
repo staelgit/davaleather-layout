@@ -1,0 +1,22 @@
+@use '../../../styles/base/vars' as *;
+@use '../../../styles/base/mixins' as *;
+
+.breadcrumbs {
+   @include desktop-body-5;
+
+   color: var(--color-secondary-gray);
+
+   &-link {
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover {
+         color: var(--color-accent);
+      }
+   }
+
+   &-separator {
+      margin: 0 2px;
+   }
+
+}

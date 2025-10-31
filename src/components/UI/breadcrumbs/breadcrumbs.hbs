@@ -1,0 +1,18 @@
+<div class="breadcrumbs">
+
+   {{#each breadcrumbs}}
+
+   {{#if @last}}
+
+   <span class="breadcrumbs-current">{{this.title}}</span>
+
+   {{else}}
+
+   <a href={{basePath this.path }} class="breadcrumbs-link">{{this.title}}</a>
+   <span class="breadcrumbs-separator">/</span>
+
+   {{/if}}
+
+   {{/each}}
+
+</div>

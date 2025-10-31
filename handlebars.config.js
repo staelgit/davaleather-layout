@@ -10,6 +10,7 @@ export const partDirs = [
   'src/components/UI/cta-button',
   'src/components/UI/slider-nav',
   'src/components/UI/section-header',
+  'src/components/UI/breadcrumbs',
   'src/components/modals/modal',
   'src/components/modals/modal-phone',
   'src/components/modals/modal-zipcode',
@@ -49,6 +50,7 @@ export const pageData = {
       services: true,
     },
     isNavElementsBlack: true,
+    breadcrumbs: [{ title: 'Home', path: '/' }, { title: 'Residential furniture service' }],
   },
   '/pages/commercial/index.html': {
     title: 'Commercial Furniture Repair - Dava Leather',
@@ -85,6 +87,11 @@ export const pageData = {
     highlightActiveMenuItems: {
       blog: true,
     },
+    breadcrumbs: [
+      { title: 'Home', path: '/' },
+      { title: 'Blog', path: '/pages/blog/index.html' },
+      { title: 'Why leather cracks: causes and prevention' },
+    ],
   },
   '/pages/blog/car-leather-dangers/index.html': {
     title: 'Why is improper cleaning of a car’s leather interior dangerous? - Dava Leather',
