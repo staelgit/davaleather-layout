@@ -335,6 +335,11 @@
       .header__action-btn {
          color: var(--color-text-black);
          transition: color 0.3s ease;
+
+         @include lg-up {
+            color: var(--color-text-white);
+         }
+
       }
 
       .header__burger-line {
