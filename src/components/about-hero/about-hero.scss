@@ -26,33 +26,8 @@
       display: none;
 
       @include lg-up {
-         flex: 1 1 100%;
-         font-size: 0.875rem;
-         color: #949494;
-         display: flex;
-         align-items: center;
-         gap: 0.5rem;
-
-         &-link {
-            color: #949494;
-            text-decoration: none;
-            transition: color 0.2s;
-
-            &:hover {
-               color: #c75528;
-            }
-         }
-
-         &-separator {
-            color: #949494;
-         }
-
-         &-current {
-            color: #fff;
-            font-weight: 700;
-         }
+         display: block;
       }
-
    }
 
    &__title {

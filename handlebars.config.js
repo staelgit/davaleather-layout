@@ -36,6 +36,7 @@ export const pageData = {
     highlightActiveMenuItems: {
       about: true,
     },
+    breadcrumbs: [{ title: 'Home', path: '/' }, { title: 'About' }],
   },
   '/pages/price/index.html': {
     title: 'Price - Dava Leather',
