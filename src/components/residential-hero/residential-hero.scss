@@ -1,0 +1,89 @@
+@use '../../styles/base/vars' as *;
+@use '../../styles/base/mixins' as *;
+
+.residential-hero {
+   &__container {
+      position: relative;
+      padding: 0 0 6.25rem;
+
+      @include lg-up {
+         padding: 6.375rem 0 8.75rem;
+      }
+   }
+
+   &__breadcrumbs {
+      @include container-padding;
+
+      display: none;
+
+      @include lg-up {
+         display: block;
+      }
+   }
+
+   &__background {
+      position: relative;
+
+      img {
+         width: 100%;
+         height: 100vh;
+         object-fit: cover;
+         object-position: center;
+
+         @include lg-up {
+            padding-top: 20px;
+            height: 100%;
+         }
+      }
+   }
+
+   &__content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 14vh var(--mobile-container-padding) 1vh;
+
+      @include lg-up {
+         padding-top: 3.125rem;
+         padding-left: var(--container-padding);
+         width: 50%;
+      }
+   }
+
+   &__title {
+      @include mobile-H2;
+
+      text-transform: uppercase;
+      color: var(--color-accent);
+
+      @include lg-up {
+         font-size: var(--responsive-font-size-1);
+      }
+
+      @include xxxl-up {
+         @include desktop-H2;
+      }
+   }
+
+   &__services-tags {
+      margin-top: 10px;
+      width: 75%;
+
+      @include lg-up {
+         margin-top: 10px;
+         width: 100%;
+      }
+   }
+
+   &__service-tag {
+      @include mobile-body-4;
+
+      color: var(--color-accent);
+      margin-right: 10px;
+
+      @include lg-up {
+         @include desktop-body-4;
+      }
+   }
+}
