@@ -4,10 +4,10 @@
 .residential-hero {
    &__container {
       position: relative;
-      padding: 0 0 6.25rem;
+      padding: 0;
 
       @include lg-up {
-         padding: 6.375rem 0 8.75rem;
+         padding-top: 6.375rem;
       }
    }
 
