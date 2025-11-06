@@ -12,6 +12,7 @@ import { initHelpRequest } from '../components/help-request/help-request.js';
 import { initReviews } from '../components/reviews/reviews.js';
 import { initServices } from '../components/services/services.js';
 import { initClientService } from '../components/client-service/client-service.js';
+import { initResidentialSlider } from '../components/residential-slider/residential-slider.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('initMain');
@@ -32,4 +33,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initClientService();
   initContacts();
   initFooter();
+  initResidentialSlider();
 });

@@ -139,6 +139,7 @@ font-family: var(--font-base);
   font-weight: 500;
   font-size: 1.25rem; // 20px
   line-height: 1.1;
+  text-transform: uppercase;
 }
 
 @mixin mobile-body-2-uppercase-medium {

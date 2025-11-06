@@ -1,0 +1,78 @@
+@use '../../styles/base/vars' as *;
+@use '../../styles/base/mixins' as *;
+
+.residential-slider {
+   .residential-slider__container {
+      padding-top: 6.25rem;
+      padding-bottom: 3.125rem;
+
+      @include lg-up {
+         padding-top: 4.375rem;
+         padding-bottom: 4.375rem;
+      }
+   }
+
+   &__title {
+      @include mobile-body-2-uppercase;
+
+      color: var(--color-text-white);
+
+      @include lg-up {
+         @include desktop-H4;
+
+         width: 49%;
+
+      }
+   }
+
+   &__gallery {
+      &-nav {
+         margin-top: 1.875rem;
+
+         @include lg-up {
+            margin-top: 3.125rem;
+         }
+      }
+
+      &-wrapper {
+         margin-top: 1.875rem;
+
+      }
+
+      &-slide {
+         position: relative;
+
+
+         &-image {
+            img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+            }
+         }
+
+         &-title {
+            @include desktop-H4;
+
+            color: var(--color-text-white);
+            text-transform: uppercase;
+            position: absolute;
+            width: 85%;
+            left: 6.5%;
+
+            @include lg-up {
+               @include mobile-H3
+            }
+         }
+
+         &:nth-child(odd) &-title {
+            top: 11%;
+         }
+
+         &:nth-child(even) &-title {
+            bottom: 8%;
+         }
+
+      }
+   }
+}

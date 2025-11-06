@@ -5,6 +5,7 @@ export const partDirs = [
   'src/components/placeholder',
   'src/components/about-hero',
   'src/components/residential-hero',
+  'src/components/residential-slider',
   'src/components/head',
   'src/components/main-hero',
   'src/components/UI/cta-button',
