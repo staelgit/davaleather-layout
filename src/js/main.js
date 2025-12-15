@@ -13,6 +13,7 @@ import { initReviews } from '../components/reviews/reviews.js';
 import { initServices } from '../components/services/services.js';
 import { initClientService } from '../components/client-service/client-service.js';
 import { initResidentialSlider } from '../components/residential-slider/residential-slider.js';
+import { initResidentialPrice } from '../components/residential-price/residential-price.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('initMain');
@@ -34,4 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initContacts();
   initFooter();
   initResidentialSlider();
+  initResidentialPrice();
 });
